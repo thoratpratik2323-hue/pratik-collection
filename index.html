@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Collection | All Projects</title>
+    <meta name="description"
+        content="A complete collection of all projects built by Pratik — from chemistry tools to love gifts for Ishika.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #060914;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e2e8f0;
+            --muted: #64748b;
+            --blue: #3b82f6;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
+            --green: #10b981;
+            --amber: #f59e0b;
+            --red: #ef4444;
+            --cyan: #06b6d4;
+            --rose: #ff758c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background blobs */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--purple);
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--blue);
+            bottom: 0;
+            right: -100px;
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--pink);
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            animation: twinkle var(--d, 3s) ease-in-out infinite var(--delay, 0s);
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--purple);
+            background: rgba(139, 92, 246, 0.1);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-sub {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SEARCH */
+        .search-wrap {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input:focus {
+            border-color: var(--purple);
+        }
+
+        .search-input::placeholder {
+            color: var(--muted);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .section-count {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 100px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            margin-left: auto;
+        }
+
+        /* GRID */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* CARD */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--card-color, linear-gradient(to right, var(--purple), var(--blue)));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-emoji {
+            font-size: 2rem;
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-arrow {
+            color: var(--muted);
+            font-size: 1.1rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .card:hover .card-arrow {
+            transform: translateX(5px);
+            color: #fff;
+        }
+
+        /* Featured card */
+        .card.featured {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .card.featured .card-emoji {
+            width: 70px;
+            height: 70px;
+            font-size: 2.5rem;
+            border-radius: 18px;
+            flex-shrink: 0;
+        }
+
+        .card.featured .card-body {
+            flex: 1;
+        }
+
+        .card.featured .card-name {
+            font-size: 1.5rem;
+        }
+
+        .card.featured .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            background: linear-gradient(to right, var(--rose), #ff7eb3);
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Hidden cards (search) */
+        .card.hidden {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer .love {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--rose);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .card.featured {
+                flex-direction: column;
+            }
+
+            .stats-bar {
+                gap: 1rem;
+            }
+        }
+
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 4rem;
+            color: var(--muted);
+            font-size: 1.1rem;
+            display: none;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-badge"><i class="fas fa-code"></i> thoratpratik2323-hue</div>
+        <h1>Pratik Collection</h1>
+        <p class="header-sub">Every project I ever built — from chemistry tools to love gifts — all in one place. Quick
+            access, always. 🚀</p>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-num">30+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">∞</div>
+                <div class="stat-label">Love</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">70/70</div>
+                <div class="stat-label">Target</div>
+            </div>
+        </div>
+
+        <div class="search-wrap">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" id="search" placeholder="Search any project..."
+                oninput="filterCards(this.value)">
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ======================== -->
+        <!-- SECTION 1: MAIN HUBS -->
+        <!-- ======================== -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(139,92,246,0.15); color: var(--purple);">🏠</div>
+                <span class="section-title">Main Hubs</span>
+                <span class="section-count">3 Projects</span>
+            </div>
+            <div class="project-grid">
+
+                <a href="https://thoratpratik2323-hue.github.io/ishus-giftbox/" target="_blank" class="card featured"
+                    style="--card-color: linear-gradient(to right, #ff758c, #ff7eb3);"
+                    data-name="ishus giftbox gift collection love">
+                    <span class="featured-badge">⭐ MAIN</span>
+                    <div class="card-emoji">🎁</div>
+                    <div class="card-body">
+                        <div class="card-name">Ishu's Giftbox</div>
+                        <div class="card-desc">The main collection hub — all gifts, study tools, and special projects
+                            for Ishika in one beautiful place.</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(255,117,140,0.15); color:#ff758c;">Main
+                                Hub</span>
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--blue), var(--cyan));"
+                    data-name="chemistry 70 hub master command center">
+                    <div class="card-emoji">🔬</div>
+                    <div class="card-name">Chem Master Hub</div>
+                    <div class="card-desc">Mission Control for Chemistry Board Prep — 13+ modules, all linked in one
+                        place.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(59,130,246,0.15); color:var(--blue);">Chemistry</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/ip-study-hub/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--green), #06b6d4);"
+                    data-name="ip study hub timer tasks pratik ishika">
+                    <div class="card-emoji">📚</div>
+                    <div class="card-name">IP Study Hub</div>
+                    <div class="card-desc">Our shared study tracker with synced timers, task lists, and couple study
+                        sessions.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(16,185,129,0.15); color:var(--green);">Study</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECTION 2: CHEMISTRY TOOLS -->
+        <!-- ======================== -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(6,182,212,0.15); color: var(--cyan);">⚗️</div>
+                <span class="section-title">Chemistry Arsenal</span>
+                <span class="section-count">12 Projects</span>
+            </div>
+            <div class="project-grid">
+
+                <a href="https://thoratpratik2323-hue.github.io/cbse-chemistry-revision/" target="_blank"
+                    class="card featured" style="--card-color: linear-gradient(to right, #ff758c, #a78bfa);"
+                    data-name="cbse chemistry revision name reactions hot organic conversions formulas">
+                    <span class="featured-badge">💖 SPECIAL</span>
+                    <div class="card-emoji">💖</div>
+                    <div class="card-body">
+                        <div class="card-name">CBSE Revision Special</div>
+                        <div class="card-desc">Last-minute board exam guide — Name Reactions, Hot Conversions, Formulas,
+                            Exam Essentials + a secret love note. 💌</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(255,117,140,0.15); color:#ff758c;">Board
+                                Exam</span>
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-derivation-master/" target="_blank"
+                    class="card" style="--card-color: linear-gradient(to right, var(--purple), var(--blue));"
+                    data-name="chemistry derivation master raoult nernst first order">
+                    <div class="card-emoji">📜</div>
+                    <div class="card-name">Derivation Master</div>
+                    <div class="card-desc">5-mark proof machine — Raoult's, Nernst, First Order Gas Phase and all major
+                        derivations.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(139,92,246,0.15); color:var(--purple);">Chemistry</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-definition-master/" target="_blank"
+                    class="card" style="--card-color: linear-gradient(to right, var(--blue), var(--cyan));"
+                    data-name="chemistry definition master ncert 12 chapters search">
+                    <div class="card-emoji">📚</div>
+                    <div class="card-name">Definition Master</div>
+                    <div class="card-desc">Full 12-Chapter NCERT revision with global search and 2026 Board Exam hacks.
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(59,130,246,0.15); color:var(--blue);">Chemistry</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-exam-buddy/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--amber), var(--red));"
+                    data-name="chemistry formula buddy numericals quick sheet">
+                    <div class="card-emoji">⚗️</div>
+                    <div class="card-name">Formula Buddy</div>
+                    <div class="card-desc">Quick formula sheets for numericals and important success tips for the big
+                        day.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(245,158,11,0.15); color:var(--amber);">Formulas</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/organic-reaction-master/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--green), var(--cyan));"
+                    data-name="organic reaction master reagent name reactions mechanisms">
+                    <div class="card-emoji">🧪</div>
+                    <div class="card-name">Organic Master</div>
+                    <div class="card-desc">Reagent lists, name reactions, and step-by-step mechanisms. Perfect organic
+                        scores guaranteed.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(16,185,129,0.15); color:var(--green);">Organic</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/inorganic-element-master/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--cyan), var(--blue));"
+                    data-name="inorganic element master d block f block coordination">
+                    <div class="card-emoji">⚛️</div>
+                    <div class="card-name">Inorganic Master</div>
+                    <div class="card-desc">d-Block, f-Block, and Coordination logic. Understand the 'Why' behind atomic
+                        radii trends.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(6,182,212,0.15); color:var(--cyan);">Inorganic</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-master-cheatsheet-2026/" target="_blank"
+                    class="card" style="--card-color: linear-gradient(to right, var(--amber), var(--green));"
+                    data-name="chemistry cheatsheet 2026 quick revision morning exam">
+                    <div class="card-emoji">⚡</div>
+                    <div class="card-name">Quick Cheatsheet</div>
+                    <div class="card-desc">The ultimate single-page revision weapon for the morning of the exam. All in
+                        one glance.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">Exam
+                            Day</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-reasoning-master/" target="_blank"
+                    class="card" style="--card-color: linear-gradient(to right, var(--red), var(--purple));"
+                    data-name="chemistry reasoning master give reasons d block p block">
+                    <div class="card-emoji">🔬</div>
+                    <div class="card-name">Reasoning Master</div>
+                    <div class="card-desc">Master "Give Reasons" questions. Accounting for trends in d-block, p-block,
+                        and organic.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(239,68,68,0.15); color:var(--red);">Reasoning</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/organic-chemistry-quiz/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--green), var(--blue));"
+                    data-name="organic chemistry quiz mcq questions test">
+                    <div class="card-emoji">📝</div>
+                    <div class="card-name">Organic MCQ Quiz</div>
+                    <div class="card-desc">15 high-yield MCQs covering reactions, mechanisms, and biomolecules. Test
+                        your prep!</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(16,185,129,0.15); color:var(--green);">Quiz</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/inorganic-chemistry-quiz/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--purple), var(--cyan));"
+                    data-name="inorganic chemistry quiz mcq metallic d f block coordination">
+                    <div class="card-emoji">💎</div>
+                    <div class="card-name">Inorganic MCQ Quiz</div>
+                    <div class="card-desc">15 metallic-grade MCQs on d-block, f-block, and Coordination complex logic.
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(139,92,246,0.15); color:var(--purple);">Quiz</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-logic-vault/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--pink), var(--purple));"
+                    data-name="chemistry logic vault assertion reason case study">
+                    <div class="card-emoji">🧠</div>
+                    <div class="card-name">Logic Vault</div>
+                    <div class="card-desc">Master Assertion-Reason and Case Study questions. The ultimate logical
+                        shield.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(236,72,153,0.15); color:var(--pink);">Logic</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-visual-gallery/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--cyan), var(--green));"
+                    data-name="chemistry visual gallery graphs d orbital diagrams art">
+                    <div class="card-emoji">📊</div>
+                    <div class="card-name">Visual Gallery</div>
+                    <div class="card-desc">Interactive graphs and d-orbital splitting diagrams. Chemistry through art.
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(6,182,212,0.15); color:var(--cyan);">Visual</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-pyq-hitlist/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--amber), var(--red));"
+                    data-name="chemistry pyq hitlist previous year questions board 2015 2025">
+                    <div class="card-emoji">🎯</div>
+                    <div class="card-name">PYQ Hitlist</div>
+                    <div class="card-desc">Most repeated Board questions (2015–2025). Target the hits, ignore the noise.
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">PYQ</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-mock-exam-2026/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--red), var(--amber));"
+                    data-name="chemistry mock exam 2026 full length 70 marks practice paper">
+                    <div class="card-emoji">🏆</div>
+                    <div class="card-name">2026 Mock Exam</div>
+                    <div class="card-desc">70-mark full length practice paper. Set a timer for 3 hours and test your
+                        limits.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(239,68,68,0.15); color:var(--red);">Mock
+                            Exam</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/chemistry-formula-hub/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, var(--purple), var(--pink));"
+                    data-name="chemistry formula hub master class 12 boards revision sheet">
+                    <div class="card-emoji">🔢</div>
+                    <div class="card-name">Formula Hub</div>
+                    <div class="card-desc">Master Formula Hub for Class 12 Boards — complete revision sheet with all
+                        formulas.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(139,92,246,0.15); color:var(--purple);">Formulas</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECTION 3: LOVE PROJECTS -->
+        <!-- ======================== -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(236,72,153,0.15); color: var(--pink);">💕</div>
+                <span class="section-title">Love Projects for Ishika</span>
+                <span class="section-count">10 Projects</span>
+            </div>
+            <div class="project-grid">
+
+                <a href="https://thoratpratik2323-hue.github.io/apology-for-ishu/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #06b6d4, #8b5cf6);"
+                    data-name="apology ishu ishika sorry love">
+                    <div class="card-emoji">😊</div>
+                    <div class="card-name">Apology for Ishu</div>
+                    <div class="card-desc">Because she deserves all the happiness. A heartfelt apology crafted with
+                        love.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(6,182,212,0.15); color:var(--cyan);">Love</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/wife-proposal-gift-2026/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ff758c, #ffd700);"
+                    data-name="wife proposal gift 2026 marriage">
+                    <div class="card-emoji">💍</div>
+                    <div class="card-name">Wife Proposal Gift 2026</div>
+                    <div class="card-desc">The most important gift — a marriage proposal designed with all my heart. 💍
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(255,117,140,0.15); color:#ff758c;">Proposal</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/wife-proposal-starry-night/" target="_blank"
+                    class="card" style="--card-color: linear-gradient(to right, #1e3a8a, #7c3aed);"
+                    data-name="wife proposal starry night stars romantic">
+                    <div class="card-emoji">🌌</div>
+                    <div class="card-name">Starry Night Proposal</div>
+                    <div class="card-desc">A romantic starry night proposal experience built under the galaxy of love.
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(124,58,237,0.15); color:#7c3aed;">Romantic</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/valentines-buddy-2026/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ff758c, #ff7eb3);"
+                    data-name="valentines buddy 2026 valentine ishu">
+                    <div class="card-emoji">💌</div>
+                    <div class="card-name">Valentine's Buddy 2026</div>
+                    <div class="card-desc">Her permanent Valentine's buddy — forever and always, every year.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(255,117,140,0.15); color:#ff758c;">Valentine</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/Ishu-Kiss-Day/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ec4899, #f43f5e);"
+                    data-name="ishu kiss day february love">
+                    <div class="card-emoji">💋</div>
+                    <div class="card-name">Ishu Kiss Day</div>
+                    <div class="card-desc">Happy Kiss Day — a sweet surprise made especially for my love.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(236,72,153,0.15); color:var(--pink);">Love</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/infinity-kiss/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #f43f5e, #ec4899);"
+                    data-name="infinity kiss love romantic">
+                    <div class="card-emoji">♾️</div>
+                    <div class="card-name">Infinity Kiss</div>
+                    <div class="card-desc">An infinite loop of love — because my feelings for her will never end.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(244,63,94,0.15); color:#f43f5e;">Infinity</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/heart/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ff0054, #ff758c);"
+                    data-name="heart love pratik ishika view into heart">
+                    <div class="card-emoji">❤️</div>
+                    <div class="card-name">Heart</div>
+                    <div class="card-desc">A direct view into my heart — built especially for the one who owns it.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(255,0,84,0.15); color:#ff0054;">Heart</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/Ishu-1st-Birthday-Gift/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #fbbf24, #f59e0b);"
+                    data-name="ishu first birthday gift celebration 1st">
+                    <div class="card-emoji">🎂</div>
+                    <div class="card-name">1st Birthday Gift</div>
+                    <div class="card-desc">Where it all started — Ishu's first birthday celebration built with all my
+                        heart.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(251,191,36,0.15); color:#fbbf24;">Birthday</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/Ishu-2026-Birthday-Gift/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #8b5cf6, #ec4899);"
+                    data-name="ishu 2026 birthday gift august locked">
+                    <div class="card-emoji">🎁</div>
+                    <div class="card-name">Birthday Gift 2026</div>
+                    <div class="card-desc">Unlocks on Aug 19th, 2026 — a very special surprise waiting for the big day!
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(139,92,246,0.15); color:var(--purple);">2026</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/pratik-ishika-shaadi/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ff758c, #8b5cf6);"
+                    data-name="pratik ishika shaadi marriage plans locked march 2026">
+                    <div class="card-emoji">👑</div>
+                    <div class="card-name">Shaadi Plans 🔒</div>
+                    <div class="card-desc">Unlocks on March 1st, 2026 — our future plans locked and waiting. 💍</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(255,117,140,0.15); color:#ff758c;">Locked</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- SECTION 4: TOOLS -->
+        <!-- ======================== -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(245,158,11,0.15); color: var(--amber);">🛠️</div>
+                <span class="section-title">Utility Tools</span>
+                <span class="section-count">2 Projects</span>
+            </div>
+            <div class="project-grid">
+
+                <a href="https://yt-download-pro.onrender.com/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ff0000, #ff758c);"
+                    data-name="yt youtube download pro premium downloader ishika">
+                    <div class="card-emoji">▶️</div>
+                    <div class="card-name">YT Download Pro</div>
+                    <div class="card-desc">Premium YouTube downloader — built especially so my girl can save her
+                        favorite videos.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(255,0,0,0.15); color:#ff0000;">Tool</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+                <a href="https://thoratpratik2323-hue.github.io/Ishu-Valentine-Gift/" target="_blank" class="card"
+                    style="--card-color: linear-gradient(to right, #ec4899, #ff758c);"
+                    data-name="ishu valentine gift 2026 love surprise">
+                    <div class="card-emoji">🌹</div>
+                    <div class="card-name">Valentine Gift 2026</div>
+                    <div class="card-desc">A special Valentine's Day gift experience designed with love and care.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(236,72,153,0.15); color:var(--pink);">Valentine</span>
+                        <i class="fas fa-arrow-right card-arrow"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <div class="no-results" id="no-results">
+            <i class="fas fa-search" style="font-size:3rem; margin-bottom:1rem; display:block; opacity:0.3"></i>
+            No project found for "<span id="search-term"></span>"
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Built with passion by <strong>Pratik</strong> for Ishika & for himself 🚀</p>
+        <p class="love">Forever and Always 💕</p>
+    </footer>
+
+    <script>
+        // Generate particles
+        const particlesEl = document.getElementById('particles');
+        for (let i = 0; i < 60; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.cssText = `
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            --d: ${2 + Math.random() * 4}s;
+            --delay: ${Math.random() * 4}s;
+            width: ${1 + Math.random() * 3}px;
+            height: ${1 + Math.random() * 3}px;
+        `;
+            particlesEl.appendChild(p);
+        }
+
+        // Search filter
+        function filterCards(query) {
+            const q = query.toLowerCase().trim();
+            const cards = document.querySelectorAll('.card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = (card.dataset.name || '') + ' ' + (card.querySelector('.card-name')?.textContent || '');
+                if (!q || name.toLowerCase().includes(q)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            const noRes = document.getElementById('no-results');
+            const termEl = document.getElementById('search-term');
+            noRes.style.display = visibleCount === 0 && q ? 'block' : 'none';
+            if (termEl) termEl.textContent = query;
+        }
+    </script>
+
+</body>
+
+</html>
