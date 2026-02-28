@@ -447,10 +447,120 @@
             display: none;
             width: 100%;
         }
+
+        /* Lock Overlay */
+        #lock-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(6, 9, 20, 0.98);
+            backdrop-filter: blur(25px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease;
+        }
+
+        .lock-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .lock-icon {
+            font-size: 3rem;
+            color: var(--pink);
+            margin-bottom: 1rem;
+        }
+
+        .lock-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .lock-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .lock-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-family: inherit;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .lock-input:focus {
+            border-color: var(--purple);
+        }
+
+        .lock-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, var(--purple), var(--pink));
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            font-family: inherit;
+        }
+
+        .lock-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .lock-error {
+            color: var(--red);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Lock Overlay -->
+    <div id="lock-overlay">
+        <div class="lock-box">
+            <i class="fas fa-lock lock-icon"></i>
+            <h2 class="lock-title">Access Restricted</h2>
+            <p class="lock-subtitle">Please enter the secret password to view Pratik's Collection Hub.</p>
+            <input type="password" class="lock-input" id="lock-password" placeholder="Enter password"
+                onkeypress="if(event.key === 'Enter') unlockHub()">
+            <button class="lock-btn" onclick="unlockHub()">Unlock Hub</button>
+            <div class="lock-error" id="lock-error">Incorrect password. Ty again!</div>
+        </div>
+    </div>
 
     <!-- Background blobs -->
     <div class="blob blob-1"></div>
@@ -1476,6 +1586,36 @@
             noRes.style.display = visibleCount === 0 && q ? 'block' : 'none';
             if (termEl) termEl.textContent = query;
         }
+
+        // Lock screen functionality
+        function unlockHub() {
+            const pwdInput = document.getElementById('lock-password');
+            const errorMsg = document.getElementById('lock-error');
+
+            if (pwdInput.value === 'ishu1908') {
+                const overlay = document.getElementById('lock-overlay');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 500);
+                errorMsg.style.opacity = '0';
+                sessionStorage.setItem('hubUnlocked', 'true');
+            } else {
+                errorMsg.style.opacity = '1';
+                pwdInput.value = '';
+                pwdInput.focus();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('hubUnlocked') === 'true') {
+                document.getElementById('lock-overlay').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            } else {
+                document.body.style.overflow = 'hidden';
+            }
+        });
     </script>
 
 </body>
