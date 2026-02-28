@@ -614,103 +614,103 @@
             transform: translateX(-50%) translateY(0);
             opacity: 1;
         }
-    </style>
-    /* Lock Overlay */
-    #lock-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(6, 9, 20, 0.98);
-    backdrop-filter: blur(25px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    transition: opacity 0.5s ease;
-    }
 
-    .lock-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 3rem 2rem;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    position: relative;
-    }
+        /* Lock Overlay */
+        #lock-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(6, 9, 20, 0.98);
+            backdrop-filter: blur(25px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease;
+        }
 
-    .lock-icon {
-    font-size: 3rem;
-    color: var(--pink);
-    margin-bottom: 1rem;
-    }
+        .lock-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
 
-    .lock-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    }
+        .lock-icon {
+            font-size: 3rem;
+            color: var(--pink);
+            margin-bottom: 1rem;
+        }
 
-    .lock-subtitle {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-bottom: 2rem;
-    line-height: 1.5;
-    }
+        .lock-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
 
-    .lock-input {
-    width: 100%;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    color: var(--text);
-    font-size: 1.1rem;
-    font-family: inherit;
-    text-align: center;
-    outline: none;
-    transition: border-color 0.3s;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-    }
+        .lock-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
 
-    .lock-input:focus {
-    border-color: var(--purple);
-    }
+        .lock-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-family: inherit;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
 
-    .lock-btn {
-    width: 100%;
-    padding: 1rem;
-    background: linear-gradient(to right, var(--purple), var(--pink));
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
-    font-family: inherit;
-    }
+        .lock-input:focus {
+            border-color: var(--purple);
+        }
 
-    .lock-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-    }
+        .lock-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, var(--purple), var(--pink));
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            font-family: inherit;
+        }
 
-    .lock-error {
-    color: var(--red);
-    font-size: 0.85rem;
-    margin-top: 1rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-weight: 500;
-    }
+        .lock-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .lock-error {
+            color: var(--red);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
     </style>
 </head>
 
