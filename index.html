@@ -685,6 +685,36 @@
             box-shadow: 0 0 10px #ff8fa3;
         }
 
+        /* Light Mode Extensions */
+        body.light-mode {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --muted: #475569;
+        }
+
+        body.light-mode h1 {
+            background: linear-gradient(135deg, #0f172a 0%, #6366f1 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+        }
+
+        body.light-mode .header-sub {
+            color: #334155;
+        }
+
+        body.light-mode .section-title {
+            color: #0f172a;
+        }
+
+        body.light-mode .card-name {
+            color: #0f172a;
+        }
+
+        body.light-mode .search-input {
+            background: #fff;
+        }
+
         /* 3. Return to Top FAB */
         .fab-top {
             position: fixed;
@@ -964,25 +994,44 @@
 
     <!-- HEADER -->
     <header id="top">
+        <button class="theme-toggle" id="mode-toggle" onclick="toggleLightMode()"
+            style="right: 5.5rem; background: rgba(245,158,11,0.1); border-color: var(--amber);"
+            title="Toggle Light Mode">☀️</button>
         <button class="theme-toggle" onclick="toggleLoveMode()" title="Toggle Love Mode">💖</button>
         <div class="welcome-badge" id="welcome-msg"><i class="far fa-clock"></i> Loading...</div>
         <div class="header-badge"><i class="fas fa-code"></i> thoratpratik2323-hue</div>
+        <div class="daily-quote" id="daily-quote"
+            style="font-size: 0.95rem; color: var(--rose); font-style: italic; margin-bottom: 1.5rem;"><i
+                class="fas fa-quote-left"></i> Zindagi safar hai, par manzil tum ho 💕 <i
+                class="fas fa-quote-right"></i></div>
         <h1>Pratik's Collection Hub</h1>
         <p class="header-sub">Every project I ever built — from chemistry tools to love gifts — all in one place. Quick
             access, always. 🚀</p>
 
-        <div class="stats-bar">
+        <div class="stats-bar" style="max-width: 900px; gap: 2rem;">
             <div class="stat">
-                <div class="stat-num">68</div>
-                <div class="stat-label">Projects</div>
+                <div class="stat-num"
+                    style="background: linear-gradient(to right, var(--cyan), var(--blue)); -webkit-background-clip: text;">
+                    12/15</div>
+                <div class="stat-label">⚗️ Chemistry (80%)</div>
             </div>
             <div class="stat">
-                <div class="stat-num">∞</div>
-                <div class="stat-label">Love</div>
+                <div class="stat-num"
+                    style="background: linear-gradient(to right, var(--pink), var(--rose)); -webkit-background-clip: text;">
+                    10/14</div>
+                <div class="stat-label">💕 Love Hub (71%)</div>
             </div>
             <div class="stat">
-                <div class="stat-num">80/80</div>
-                <div class="stat-label">Math Target</div>
+                <div class="stat-num"
+                    style="background: linear-gradient(to right, var(--purple), #c084fc); -webkit-background-clip: text;">
+                    68/80</div>
+                <div class="stat-label">📐 Math Target (85%)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num"
+                    style="background: linear-gradient(to right, var(--green), #34d399); -webkit-background-clip: text;">
+                    2/3</div>
+                <div class="stat-label">🤖 Code & AI (66%)</div>
             </div>
         </div>
 
@@ -999,9 +1048,29 @@
             <button class="filter-btn" onclick="filterCategory('math', this)">Math</button>
             <button class="filter-btn" onclick="filterCategory('study', this)">Study Trackers</button>
         </div>
+
+        <div class="countdown" id="countdown"
+            style="margin-top: 2rem; padding: 1rem 2rem; background: rgba(255,77,109,0.1); border: 1px dashed var(--rose); border-radius: 12px; display: inline-block; color: #fff;">
+            ⏳ Anniversary in <span id="cd-days"
+                style="color:var(--rose); font-weight: bold; font-size:1.3rem;">--</span> days! 🎉
+        </div>
     </header>
 
     <div class="container">
+
+        <!-- ======================== -->
+        <!-- SECTION 0: QUICK LAUNCH -->
+        <!-- ======================== -->
+        <section class="section" id="quick-launch" style="display:none; margin-bottom: 4rem;">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(245,158,11,0.15); color: var(--amber);">🔥</div>
+                <span class="section-title">Quick Launch</span>
+                <span class="section-count">Most Used</span>
+            </div>
+            <div class="project-grid" id="quickLaunchGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
 
         <!-- ======================== -->
         <!-- SECTION 1: MAIN HUBS -->
@@ -2013,7 +2082,14 @@
                 const name = (card.dataset.name || '') + ' ' + (card.querySelector('.card-name')?.textContent || '');
                 const category = card.dataset.category || card.closest('.section')?.querySelector('.section-title')?.textContent.toLowerCase() || '';
 
-                const matchesQuery = !q || name.toLowerCase().includes(q);
+                let matchesQuery = false;
+                if (q.startsWith('#')) {
+                    const tag = q.substring(1);
+                    matchesQuery = category.includes(tag) || name.includes(tag) || card.innerHTML.toLowerCase().includes(tag);
+                } else {
+                    matchesQuery = !q || name.toLowerCase().includes(q);
+                }
+
                 const matchesCategory = currentCategory === 'all' || category.includes(currentCategory);
 
                 if (matchesQuery && matchesCategory) {
@@ -2210,6 +2286,82 @@
             if (localStorage.getItem('loveMode') === 'true') {
                 document.body.classList.add('love-mode');
             }
+            if (localStorage.getItem('lightMode') === 'true') {
+                document.body.classList.add('light-mode');
+            }
+
+            // Populate Last Visited timestamps
+            document.querySelectorAll('.card').forEach(card => {
+                const id = card.dataset.name;
+                const lastVisited = localStorage.getItem('visited_' + id);
+                if (lastVisited) {
+                    const diff = Date.now() - parseInt(lastVisited);
+                    let text = '';
+                    if (diff < 3600000) text = Math.floor(diff / 60000) + ' min pehle';
+                    else if (diff < 86400000) text = Math.floor(diff / 3600000) + ' ghante pehle';
+                    else text = Math.floor(diff / 86400000) + ' din pehle';
+
+                    const timeEl = document.createElement('div');
+                    timeEl.innerHTML = `<i class="far fa-clock"></i> ${text}`;
+                    timeEl.style = "font-size: 0.72rem; color: var(--muted); margin-top: 0.5rem;";
+                    card.querySelector('.card-body')?.appendChild(timeEl) || card.appendChild(timeEl);
+                }
+
+                // Add click listener to save visit
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('.card-share')) return; // Ignore share clicks
+                    localStorage.setItem('visited_' + card.dataset.name, Date.now());
+                });
+            });
+
+            // Populate Quick Launch (Top 3 most recently visited)
+            const visited = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('visited_')) {
+                    visited.push({ id: key.substring(8), time: parseInt(localStorage.getItem(key)) });
+                }
+            }
+            if (visited.length > 0) {
+                visited.sort((a, b) => b.time - a.time);
+                const quickGrid = document.getElementById('quickLaunchGrid');
+                const quickSec = document.getElementById('quick-launch');
+                let count = 0;
+                visited.forEach(v => {
+                    if (count >= 3) return;
+                    const c = document.querySelector(`.card[data-name="${v.id}"]`);
+                    // Don't clone clones
+                    if (c && c.parentElement.id !== 'quickLaunchGrid') {
+                        const clone = c.cloneNode(true);
+                        clone.id = 'clone_' + count;
+                        quickGrid.appendChild(clone);
+                        count++;
+                    }
+                });
+                if (count > 0) quickSec.style.display = 'block';
+            }
+
+            // Setup Daily Quote
+            const quotes = [
+                "Zindagi safar hai, par manzil tum ho 💕",
+                "Be the energy you want to attract! ✨",
+                "Push yourself, because no one else is going to do it for you. 🚀",
+                "You are doing better than you think. Keep going! 💪",
+                "Make today so awesome yesterday gets jealous. 🔥"
+            ];
+            const todayIndex = new Date().getDay();
+            if (document.getElementById('daily-quote')) {
+                document.getElementById('daily-quote').innerHTML = `<i class="fas fa-quote-left"></i> ${quotes[todayIndex % quotes.length]} <i class="fas fa-quote-right"></i>`;
+            }
+
+            // Setup Event Countdown (for 19 Aug)
+            const currYear = new Date().getFullYear();
+            const eventTarget = new Date(`${currYear}-08-19T00:00:00`);
+            if (new Date() > eventTarget) eventTarget.setFullYear(currYear + 1);
+            const daysLeft = Math.ceil((eventTarget - new Date()) / (1000 * 60 * 60 * 24));
+            if (document.getElementById('cd-days')) {
+                document.getElementById('cd-days').innerText = daysLeft;
+            }
         });
 
         // 1. Welcome Clock Logic
@@ -2238,9 +2390,23 @@
             playSwoosh();
             if (document.body.classList.contains('love-mode')) {
                 localStorage.setItem('loveMode', 'true');
-                // Change particles to hearts visually if possible, or just re-color via CSS
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('lightMode', 'false');
             } else {
                 localStorage.setItem('loveMode', 'false');
+            }
+        }
+
+        // Light Mode Logic
+        function toggleLightMode() {
+            document.body.classList.toggle('light-mode');
+            playSwoosh();
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('lightMode', 'true');
+                document.body.classList.remove('love-mode'); // Cancel love mode
+                localStorage.setItem('loveMode', 'false');
+            } else {
+                localStorage.setItem('lightMode', 'false');
             }
         }
 
@@ -2268,8 +2434,11 @@
 
         // Load saved notes (Moved into DOMContentLoaded for safety)
         document.addEventListener('DOMContentLoaded', () => {
+            const defaultNotes = `⏳ Aaj ka Target:\n- \n\n✅ Kal Kiya:\n- \n\n🚀 Chaloo Hai:\n- `;
             if (localStorage.getItem('savedHubNotes')) {
                 hubNotes.value = localStorage.getItem('savedHubNotes');
+            } else {
+                hubNotes.value = defaultNotes;
             }
         });
 
