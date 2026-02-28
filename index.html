@@ -1048,12 +1048,6 @@
             <button class="filter-btn" onclick="filterCategory('math', this)">Math</button>
             <button class="filter-btn" onclick="filterCategory('study', this)">Study Trackers</button>
         </div>
-
-        <div class="countdown" id="countdown"
-            style="margin-top: 2rem; padding: 1rem 2rem; background: rgba(255,77,109,0.1); border: 1px dashed var(--rose); border-radius: 12px; display: inline-block; color: #fff;">
-            ⏳ Anniversary in <span id="cd-days"
-                style="color:var(--rose); font-weight: bold; font-size:1.3rem;">--</span> days! 🎉
-        </div>
     </header>
 
     <div class="container">
@@ -2352,15 +2346,6 @@
             const todayIndex = new Date().getDay();
             if (document.getElementById('daily-quote')) {
                 document.getElementById('daily-quote').innerHTML = `<i class="fas fa-quote-left"></i> ${quotes[todayIndex % quotes.length]} <i class="fas fa-quote-right"></i>`;
-            }
-
-            // Setup Event Countdown (for 19 Aug)
-            const currYear = new Date().getFullYear();
-            const eventTarget = new Date(`${currYear}-08-19T00:00:00`);
-            if (new Date() > eventTarget) eventTarget.setFullYear(currYear + 1);
-            const daysLeft = Math.ceil((eventTarget - new Date()) / (1000 * 60 * 60 * 24));
-            if (document.getElementById('cd-days')) {
-                document.getElementById('cd-days').innerText = daysLeft;
             }
         });
 
