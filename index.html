@@ -448,102 +448,269 @@
             width: 100%;
         }
 
-        /* Lock Overlay */
-        #lock-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(6, 9, 20, 0.98);
-            backdrop-filter: blur(25px);
-            z-index: 9999;
+        /* 1. Quick Category Filters */
+        .filters {
             display: flex;
-            align-items: center;
+            gap: 0.8rem;
             justify-content: center;
-            flex-direction: column;
-            transition: opacity 0.5s ease;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
-        .lock-box {
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        .lock-icon {
-            font-size: 3rem;
-            color: var(--pink);
-            margin-bottom: 1rem;
-        }
-
-        .lock-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .lock-subtitle {
-            font-size: 0.9rem;
             color: var(--muted);
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        .lock-input {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--text);
-            font-size: 1.1rem;
             font-family: inherit;
-            text-align: center;
-            outline: none;
-            transition: border-color 0.3s;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-
-        .lock-input:focus {
-            border-color: var(--purple);
-        }
-
-        .lock-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(to right, var(--purple), var(--pink));
-            border: none;
-            border-radius: 12px;
-            color: #fff;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-            font-family: inherit;
+            transition: all 0.3s ease;
         }
 
-        .lock-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+        .filter-btn:hover {
+            border-color: var(--purple);
+            color: var(--text);
         }
 
-        .lock-error {
-            color: var(--red);
-            font-size: 0.85rem;
-            margin-top: 1rem;
+        .filter-btn.active {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: var(--purple);
+            color: #fff;
+        }
+
+        /* 3. NEW Badges */
+        .new-badge {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+            z-index: 2;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 65, 108, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 65, 108, 0);
+            }
+        }
+
+        /* 5. Share Buttons */
+        .card-share {
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.2s;
+            margin-right: 0.5rem;
+            outline: none;
+        }
+
+        .card-share:hover {
+            color: var(--blue);
+            transform: scale(1.2);
+        }
+
+        /* 6. Custom Cursor */
+        body {
+            cursor: none;
+            /* Hide default cursor */
+        }
+
+        a,
+        button,
+        input {
+            cursor: none;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--purple);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            transition: width 0.2s, height 0.2s, background 0.2s;
+        }
+
+        .custom-cursor-dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: var(--pink);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10001;
+            box-shadow: 0 0 10px var(--pink);
+        }
+
+        .custom-cursor.hovering {
+            width: 40px;
+            height: 40px;
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--pink);
+        }
+
+        /* Cursor Trail */
+        .cursor-trail {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--blue);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            opacity: 0.6;
+            transition: opacity 0.5s ease-out;
+            box-shadow: 0 0 8px var(--blue);
+        }
+
+        /* Toast Notification for Sharing */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-weight: 600;
             opacity: 0;
-            transition: opacity 0.3s;
-            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 99999;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+    /* Lock Overlay */
+    #lock-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(6, 9, 20, 0.98);
+    backdrop-filter: blur(25px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease;
+    }
+
+    .lock-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    }
+
+    .lock-icon {
+    font-size: 3rem;
+    color: var(--pink);
+    margin-bottom: 1rem;
+    }
+
+    .lock-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    }
+
+    .lock-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    }
+
+    .lock-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 1.1rem;
+    font-family: inherit;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    }
+
+    .lock-input:focus {
+    border-color: var(--purple);
+    }
+
+    .lock-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to right, var(--purple), var(--pink));
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    font-family: inherit;
+    }
+
+    .lock-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    }
+
+    .lock-error {
+    color: var(--red);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 500;
+    }
     </style>
 </head>
 
@@ -597,6 +764,14 @@
             <input type="text" class="search-input" id="search" placeholder="Search any project..."
                 oninput="filterCards(this.value)">
         </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterCategory('all', this)">All</button>
+            <button class="filter-btn" onclick="filterCategory('main', this)">Main Hubs</button>
+            <button class="filter-btn" onclick="filterCategory('chemistry', this)">Chemistry</button>
+            <button class="filter-btn" onclick="filterCategory('math', this)">Math</button>
+            <button class="filter-btn" onclick="filterCategory('study', this)">Study Trackers</button>
+        </div>
     </header>
 
     <div class="container">
@@ -614,7 +789,7 @@
 
                 <a href="https://thoratpratik2323-hue.github.io/ishus-giftbox/" target="_blank" class="card featured"
                     style="--card-color: linear-gradient(to right, #ff758c, #ff7eb3);"
-                    data-name="ishus giftbox gift collection love">
+                    data-name="ishus giftbox gift collection love" data-category="main love">
                     <span class="featured-badge">⭐ MAIN</span>
                     <div class="card-emoji">🎁</div>
                     <div class="card-body">
@@ -624,14 +799,19 @@
                         <div class="card-footer">
                             <span class="card-tag" style="background:rgba(255,117,140,0.15); color:#ff758c;">Main
                                 Hub</span>
-                            <i class="fas fa-arrow-right card-arrow"></i>
+                            <div>
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishus-giftbox/')"><i
+                                        class="far fa-copy"></i></button>
+                                <i class="fas fa-arrow-right card-arrow"></i>
+                            </div>
                         </div>
                     </div>
                 </a>
 
                 <a href="https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, var(--blue), var(--cyan));"
-                    data-name="chemistry 70 hub master command center">
+                    data-name="chemistry 70 hub master command center" data-category="main chemistry">
                     <div class="card-emoji">🔬</div>
                     <div class="card-name">Chem Master Hub</div>
                     <div class="card-desc">Mission Control for Chemistry Board Prep — 13+ modules, all linked in one
@@ -639,26 +819,37 @@
                     <div class="card-footer">
                         <span class="card-tag"
                             style="background:rgba(59,130,246,0.15); color:var(--blue);">Chemistry</span>
-                        <i class="fas fa-arrow-right card-arrow"></i>
+                        <div>
+                            <button class="card-share"
+                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/')"><i
+                                    class="far fa-copy"></i></button>
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
                     </div>
                 </a>
 
                 <a href="https://thoratpratik2323-hue.github.io/ishu-math-hub/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, var(--primary), var(--secondary));"
-                    data-name="ishu math hub class 12 board">
+                    data-name="ishu math hub class 12 board" data-category="main math">
+                    <span class="new-badge">NEW 🔥</span>
                     <div class="card-emoji">📐</div>
                     <div class="card-name">Ishu's Math Hub</div>
                     <div class="card-desc">Class 12 Board Math Mission Control — Formulas, PYQs, and everything Ishu
                         needs! 🎯</div>
                     <div class="card-footer">
                         <span class="card-tag" style="background:rgba(236,72,153,0.15); color:var(--pink);">Math</span>
-                        <i class="fas fa-arrow-right card-arrow"></i>
+                        <div>
+                            <button class="card-share"
+                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
+                                    class="far fa-copy"></i></button>
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
                     </div>
                 </a>
 
                 <a href="https://thoratpratik2323-hue.github.io/ip-study-hub/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, var(--green), #06b6d4);"
-                    data-name="ip study hub timer tasks pratik ishika">
+                    data-name="ip study hub timer tasks pratik ishika" data-category="main study">
                     <div class="card-emoji">📚</div>
                     <div class="card-name">IP Study Hub</div>
                     <div class="card-desc">Our shared study tracker with synced timers, task lists, and couple study
@@ -666,7 +857,12 @@
                     <div class="card-footer">
                         <span class="card-tag"
                             style="background:rgba(16,185,129,0.15); color:var(--green);">Study</span>
-                        <i class="fas fa-arrow-right card-arrow"></i>
+                        <div>
+                            <button class="card-share"
+                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ip-study-hub/')"><i
+                                    class="far fa-copy"></i></button>
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
                     </div>
                 </a>
 
@@ -685,14 +881,19 @@
 
                 <a href="https://thoratpratik2323-hue.github.io/jee-70-day-war-room/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, var(--amber), var(--red));"
-                    data-name="jee 70 day war room study plan tracker">
+                    data-name="jee 70 day war room study plan tracker" data-category="main study">
                     <div class="card-emoji">⚔️</div>
                     <div class="card-name">JEE 70 Day War Room</div>
                     <div class="card-desc">70-day JEE preparation war room — study plan, tracker, and battle strategy.
                         🔥</div>
                     <div class="card-footer">
                         <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">JEE</span>
-                        <i class="fas fa-arrow-right card-arrow"></i>
+                        <div>
+                            <button class="card-share"
+                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/jee-70-day-war-room/')"><i
+                                    class="far fa-copy"></i></button>
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
                     </div>
                 </a>
 
@@ -1294,6 +1495,7 @@
                 <a href="https://thoratpratik2323-hue.github.io/math-cheatsheet/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, #34d399, #60a5fa);"
                     data-name="math cheatsheet quick revision 13 chapters exam day">
+                    <span class="new-badge">NEW 🔥</span>
                     <div class="card-emoji">⚡</div>
                     <div class="card-name">Quick Cheatsheet</div>
                     <div class="card-desc">13 chapters on one page — the ultimate exam-morning revision weapon. All key
@@ -1347,6 +1549,7 @@
                 <a href="https://thoratpratik2323-hue.github.io/math-mcq-quiz/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, #10b981, #60a5fa);"
                     data-name="math mcq quiz 50 questions all chapters board">
+                    <span class="new-badge">NEW 🔥</span>
                     <div class="card-emoji">📝</div>
                     <div class="card-name">MCQ Quiz</div>
                     <div class="card-desc">50 MCQs covering all 13 chapters with MathJax rendering. Timed practice for
@@ -1360,6 +1563,7 @@
                 <a href="https://thoratpratik2323-hue.github.io/math-mock-exam/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, #ef4444, #f59e0b);"
                     data-name="math mock exam full 80 marks board 2026 practice paper">
+                    <span class="new-badge">NEW 🔥</span>
                     <div class="card-emoji">🏆</div>
                     <div class="card-name">Full Mock Exam</div>
                     <div class="card-desc">80-mark full-length practice paper. Set 3-hour timer and simulate the real
@@ -1566,6 +1770,8 @@
         }
 
         // Search filter
+        let currentCategory = 'all';
+
         function filterCards(query) {
             const q = query.toLowerCase().trim();
             const cards = document.querySelectorAll('.card');
@@ -1573,7 +1779,12 @@
 
             cards.forEach(card => {
                 const name = (card.dataset.name || '') + ' ' + (card.querySelector('.card-name')?.textContent || '');
-                if (!q || name.toLowerCase().includes(q)) {
+                const category = card.dataset.category || card.closest('.section')?.querySelector('.section-title')?.textContent.toLowerCase() || '';
+
+                const matchesQuery = !q || name.toLowerCase().includes(q);
+                const matchesCategory = currentCategory === 'all' || category.includes(currentCategory);
+
+                if (matchesQuery && matchesCategory) {
                     card.classList.remove('hidden');
                     visibleCount++;
                 } else {
@@ -1583,21 +1794,165 @@
 
             const noRes = document.getElementById('no-results');
             const termEl = document.getElementById('search-term');
-            noRes.style.display = visibleCount === 0 && q ? 'block' : 'none';
-            if (termEl) termEl.textContent = query;
+            noRes.style.display = visibleCount === 0 && (q || currentCategory !== 'all') ? 'block' : 'none';
+            if (termEl) termEl.textContent = query || currentCategory;
+
+            // Re-bind hover sounds since layout changed
+            bindCardSounds();
+        }
+
+        function filterCategory(cat, btn) {
+            currentCategory = cat;
+
+            // Update active state
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            playSwoosh();
+
+            // Run filter with current search query (if any)
+            filterCards(document.getElementById('search').value);
+        }
+
+        // Share functionality
+        function shareProject(event, url) {
+            event.preventDefault(); // Stop card from opening link
+            event.stopPropagation();
+
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.createElement('div');
+                toast.className = 'toast show';
+                toast.innerHTML = '<i class="fas fa-check-circle" style="color:var(--green)"></i> Copied link to clipboard!';
+                document.body.appendChild(toast);
+
+                // Play notification sound if using synthesis, or just tiny pop
+                try {
+                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = ctx.createOscillator();
+                    osc.type = "sine";
+                    osc.frequency.setValueAtTime(800, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+                    osc.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.1);
+                } catch (e) { }
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 400);
+                }, 2000);
+            });
+        }
+
+        // Custom Cursor Logic
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        document.body.appendChild(cursor);
+
+        const cursorDot = document.createElement('div');
+        cursorDot.className = 'custom-cursor-dot';
+        document.body.appendChild(cursorDot);
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+
+            // Create trail
+            if (Math.random() > 0.6 && sessionStorage.getItem('hubUnlocked') === 'true') {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                document.body.appendChild(trail);
+
+                requestAnimationFrame(() => {
+                    trail.style.opacity = '0';
+                    trail.style.transform = `translate(-50%, -50%) scale(0.2)`;
+                });
+
+                setTimeout(() => trail.remove(), 500);
+            }
+        });
+
+        // Add hover effects to links
+        const interactiveElemenets = document.querySelectorAll('a, button, input');
+        interactiveElemenets.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        });
+
+        // 4. Synthesized Sound Effects (No reliable external hotlinking)
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new AudioContext();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }
+
+        function playUnlockSound() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
+            osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.2);
+
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, audioCtx.currentTime + 0.1);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.6);
+        }
+
+        function playSwoosh() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
+
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.1, audioCtx.currentTime + 0.05);
+            gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
+
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.25);
+        }
+
+        function bindCardSounds() {
+            document.querySelectorAll('.card:not(.hidden)').forEach(card => {
+                card.onmouseenter = playSwoosh;
+            });
         }
 
         // Lock screen functionality
         function unlockHub() {
+            initAudio(); // Required after user interaction
             const pwdInput = document.getElementById('lock-password');
             const errorMsg = document.getElementById('lock-error');
 
             if (pwdInput.value === 'ishu1908') {
+                playUnlockSound();
                 const overlay = document.getElementById('lock-overlay');
                 overlay.style.opacity = '0';
                 setTimeout(() => {
                     overlay.style.display = 'none';
                     document.body.style.overflow = 'auto';
+                    bindCardSounds();
                 }, 500);
                 errorMsg.style.opacity = '0';
                 sessionStorage.setItem('hubUnlocked', 'true');
@@ -1612,6 +1967,7 @@
             if (sessionStorage.getItem('hubUnlocked') === 'true') {
                 document.getElementById('lock-overlay').style.display = 'none';
                 document.body.style.overflow = 'auto';
+                setTimeout(bindCardSounds, 500);
             } else {
                 document.body.style.overflow = 'hidden';
             }
