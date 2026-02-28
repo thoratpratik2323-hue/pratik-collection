@@ -2792,20 +2792,15 @@
         }
 
         // Lock screen functionality
-        async function unlockHub() {
+        function unlockHub() {
             initAudio(); // Required after user interaction
             const pwdInput = document.getElementById('lock-password');
             const errorMsg = document.getElementById('lock-error');
             const input = pwdInput.value;
 
-            // Secure Hashing (SHA-256)
-            const msgBuffer = new TextEncoder().encode(input);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-            // Hash for 'ishu1908'
-            if (hashHex === 'ba8d25e01005f361fe931577388a4d943d819112246b9548a2bde546b26eb6e0') {
+            // Simple but compatible "hiding" (Base64)
+            // This works even if you are opening the file locally from your PC
+            if (btoa(input) === 'aXNodTE5MDg=') {
                 playUnlockSound();
                 const overlay = document.getElementById('lock-overlay');
                 overlay.style.opacity = '0';
