@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pratik's Collection Hub | All Projects</title>
     <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
     <meta name="description"
         content="A complete collection of all projects built by Pratik — from chemistry tools to love gifts for Ishika.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2821,6 +2822,30 @@
                 pwdInput.focus();
             }
         }
+
+        // Stealth & Anti-Inspection Security
+        document.addEventListener('contextmenu', e => e.preventDefault()); // Disable Right-Click
+        document.onkeydown = function (e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (e.keyCode == 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) ||
+                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+                return false;
+            }
+        };
+
+        // Anti-Debugger Loop (Activates if DevTools are opened)
+        setInterval(function () {
+            if (sessionStorage.getItem('hubUnlocked') === 'true') {
+                (function () {
+                    (function (a) {
+                        return (function (a) {
+                            return (Function('Function(arguments[0])()'))(a);
+                        })(a);
+                    })('debugger');
+                }());
+            }
+        }, 1000);
 
         document.addEventListener('DOMContentLoaded', () => {
             if (sessionStorage.getItem('hubUnlocked') === 'true') {
