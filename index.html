@@ -2266,10 +2266,12 @@
         const notesPanel = document.getElementById('notesPanel');
         const hubNotes = document.getElementById('hubNotes');
 
-        // Load saved notes
-        if (localStorage.getItem('savedHubNotes')) {
-            hubNotes.value = localStorage.getItem('savedHubNotes');
-        }
+        // Load saved notes (Moved into DOMContentLoaded for safety)
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('savedHubNotes')) {
+                hubNotes.value = localStorage.getItem('savedHubNotes');
+            }
+        });
 
         function toggleNotesPanel() {
             notesPanel.classList.toggle('open');
