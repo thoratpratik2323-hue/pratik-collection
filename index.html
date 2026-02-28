@@ -533,6 +533,45 @@
             transform: scale(1.2);
         }
 
+        .card-links {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .btn-link {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+        }
+
+        .btn-link:hover {
+            background: var(--purple);
+            color: #fff;
+            border-color: var(--purple);
+            transform: translateY(-2px);
+        }
+
+        .btn-link.live {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--green);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-link.live:hover {
+            background: var(--green);
+            color: #fff;
+        }
+
         /* 6. Custom Cursor */
         body {
             cursor: none;
@@ -1077,8 +1116,7 @@
             </div>
             <div class="project-grid">
 
-                <a href="https://thoratpratik2323-hue.github.io/ishus-giftbox/" target="_blank" class="card featured"
-                    style="--card-color: linear-gradient(to right, #ff758c, #ff7eb3);"
+                <div class="card featured" style="--card-color: linear-gradient(to right, #ff758c, #ff7eb3);"
                     data-name="ishus giftbox gift collection love" data-category="main love">
                     <span class="featured-badge">⭐ MAIN</span>
                     <div class="card-emoji">🎁</div>
@@ -1089,18 +1127,22 @@
                         <div class="card-footer">
                             <span class="card-tag" style="background:rgba(255,117,140,0.15); color:#ff758c;">Main
                                 Hub</span>
-                            <div>
+                            <div class="card-links">
                                 <button class="card-share"
                                     onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishus-giftbox/')"><i
                                         class="far fa-copy"></i></button>
-                                <i class="fas fa-arrow-right card-arrow"></i>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ishus-giftbox')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishus-giftbox/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/" target="_blank" class="card"
-                    style="--card-color: linear-gradient(to right, var(--blue), var(--cyan));"
+                <div class="card" style="--card-color: linear-gradient(to right, var(--blue), var(--cyan));"
                     data-name="chemistry 70 hub master command center" data-category="main chemistry">
                     <div class="card-emoji">🔬</div>
                     <div class="card-name">Chem Master Hub</div>
@@ -1109,17 +1151,21 @@
                     <div class="card-footer">
                         <span class="card-tag"
                             style="background:rgba(59,130,246,0.15); color:var(--blue);">Chemistry</span>
-                        <div>
+                        <div class="card-links">
                             <button class="card-share"
                                 onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/')"><i
                                     class="far fa-copy"></i></button>
-                            <i class="fas fa-arrow-right card-arrow"></i>
+                            <button class="btn-link"
+                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/chemistry-70-70-hub')"><i
+                                    class="fab fa-github"></i> Code</button>
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/')"><i
+                                    class="fas fa-external-link-alt"></i> Live</button>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://thoratpratik2323-hue.github.io/ishu-math-hub/" target="_blank" class="card"
-                    style="--card-color: linear-gradient(to right, var(--primary), var(--secondary));"
+                <div class="card" style="--card-color: linear-gradient(to right, var(--primary), var(--secondary));"
                     data-name="ishu math hub class 12 board" data-category="main math">
                     <span class="new-badge">NEW 🔥</span>
                     <div class="card-emoji">📐</div>
@@ -1128,17 +1174,21 @@
                         needs! 🎯<br><span class="update-label">Recently Added</span></div>
                     <div class="card-footer">
                         <span class="card-tag" style="background:rgba(236,72,153,0.15); color:var(--pink);">Math</span>
-                        <div>
+                        <div class="card-links">
                             <button class="card-share"
                                 onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
                                     class="far fa-copy"></i></button>
-                            <i class="fas fa-arrow-right card-arrow"></i>
+                            <button class="btn-link"
+                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ishu-math-hub')"><i
+                                    class="fab fa-github"></i> Code</button>
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
+                                    class="fas fa-external-link-alt"></i> Live</button>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="https://thoratpratik2323-hue.github.io/ip-study-hub/" target="_blank" class="card"
-                    style="--card-color: linear-gradient(to right, var(--green), #06b6d4);"
+                <div class="card" style="--card-color: linear-gradient(to right, var(--green), #06b6d4);"
                     data-name="ip study hub timer tasks pratik ishika" data-category="main study">
                     <div class="card-emoji">📚</div>
                     <div class="card-name">IP Study Hub</div>
@@ -1147,14 +1197,19 @@
                     <div class="card-footer">
                         <span class="card-tag"
                             style="background:rgba(16,185,129,0.15); color:var(--green);">Study</span>
-                        <div>
+                        <div class="card-links">
                             <button class="card-share"
                                 onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ip-study-hub/')"><i
                                     class="far fa-copy"></i></button>
-                            <i class="fas fa-arrow-right card-arrow"></i>
+                            <button class="btn-link"
+                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ip-study-hub')"><i
+                                    class="fab fa-github"></i> Code</button>
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ip-study-hub/')"><i
+                                    class="fas fa-external-link-alt"></i> Live</button>
                         </div>
                     </div>
-                </a>
+                </div>
 
                 <a href="https://thoratpratik2323-hue.github.io/portfolio-live/" target="_blank" class="card"
                     style="--card-color: linear-gradient(to right, var(--purple), var(--blue));"
@@ -2143,6 +2198,13 @@
                     setTimeout(() => toast.remove(), 400);
                 }, 2000);
             });
+        }
+
+        // Open Link Wrapper
+        function openProject(event, url) {
+            event.preventDefault();
+            event.stopPropagation();
+            window.open(url, '_blank');
         }
 
         // Custom Cursor Logic
