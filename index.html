@@ -2805,7 +2805,7 @@
             const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
             // Hash for 'ishu1908'
-            if (hashHex === '43399434861214041b369c9704e6c71c4c1143899f1c7d242485501ba472f872') {
+            if (hashHex === 'ba8d25e01005f361fe931577388a4d943d819112246b9548a2bde546b26eb6e0') {
                 playUnlockSound();
                 const overlay = document.getElementById('lock-overlay');
                 overlay.style.opacity = '0';
@@ -2833,19 +2833,6 @@
                 return false;
             }
         };
-
-        // Anti-Debugger Loop (Activates if DevTools are opened)
-        setInterval(function () {
-            if (sessionStorage.getItem('hubUnlocked') === 'true') {
-                (function () {
-                    (function (a) {
-                        return (function (a) {
-                            return (Function('Function(arguments[0])()'))(a);
-                        })(a);
-                    })('debugger');
-                }());
-            }
-        }, 1000);
 
         document.addEventListener('DOMContentLoaded', () => {
             if (sessionStorage.getItem('hubUnlocked') === 'true') {
