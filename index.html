@@ -276,6 +276,25 @@
             margin-left: auto;
         }
 
+        .sub-header {
+            margin: 2.5rem 0 1.5rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--purple);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .sub-header i {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
         /* GRID */
         .project-grid {
             display: grid;
@@ -1095,8 +1114,8 @@
         <section class="section">
             <div class="section-header">
                 <div class="section-icon" style="background: rgba(139,92,246,0.15); color: var(--purple);">🏠</div>
-                <span class="section-title">Main Hubs & Portals</span>
-                <span class="section-count">11 Projects</span>
+                <span class="section-title">The Master Hubs</span>
+                <span class="section-count">4 Projects</span>
             </div>
             <div class="project-grid">
 
@@ -1136,7 +1155,7 @@
                     <div class="card-emoji">🗂️</div>
                     <div class="card-body">
                         <div class="card-name">Pratik's Collection Hub</div>
-                        <div class="card-desc">The central directory for all 71+ projects. Fast navigation, search, and
+                        <div class="card-desc">The central directory for all 68+ projects. Fast navigation, search, and
                             category filters.<br><span class="update-label">Active Directory</span></div>
                         <div class="card-footer">
                             <span class="card-tag" style="background:rgba(139,92,246,0.15); color:var(--purple);">Master
@@ -1157,141 +1176,77 @@
                 </div>
 
                 <!-- 3. IP GAME STATION -->
-                <div class="card featured" style="--card-color: linear-gradient(to right, #6a11cb, #2575fc);"
+                <div class="card" style="--card-color: linear-gradient(to right, #6a11cb, #2575fc);"
                     data-name="ip game station games hub fun play" data-category="main games">
                     <span class="new-badge">FUN ZONE ⚡</span>
                     <div class="card-emoji">🎮</div>
-                    <div class="card-body">
-                        <div class="card-name">IP Game Station</div>
-                        <div class="card-desc">The ultimate gaming command center — mini-games, challenges, and
-                            high-score battles built for us.<br><span class="update-label">New Release</span></div>
-                        <div class="card-footer">
-                            <span class="card-tag" style="background:rgba(106,17,203,0.15); color:#6a11cb;">Gaming
-                                Hub</span>
-                            <div class="card-links">
-                                <button class="card-share"
-                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ip-game-station-hub/')"><i
-                                        class="far fa-copy"></i></button>
-                                <button class="btn-link"
-                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ip-game-station-hub')"><i
-                                        class="fab fa-github"></i> Code</button>
-                                <button class="btn-link live"
-                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ip-game-station-hub/')"><i
-                                        class="fas fa-external-link-alt"></i> Live</button>
-                            </div>
+                    <div class="card-name">IP Game Station</div>
+                    <div class="card-desc">The ultimate gaming command center — mini-games and challenges for us.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(106,17,203,0.15); color:#6a11cb;">Gaming
+                            Hub</span>
+                        <div class="card-links">
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ip-game-station-hub/')">Live</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. ISHU LOYALTY PORTAL -->
-                <div class="card featured" style="--card-color: linear-gradient(to right, #ff8fa3, #a78bfa);"
-                    data-name="ishu loyalty portal apology report queen princess" data-category="main love loyalty">
-                    <span class="featured-badge">🤴 SUPREME</span>
-                    <div class="card-emoji">👸</div>
-                    <div class="card-body">
-                        <div class="card-name">Ishu Loyalty Portal</div>
-                        <div class="card-desc">The official loyalty report and apology engine for Queen Ishika. 1000%
-                            Loyalty Guaranteed. 💜<br><span class="update-label">Supreme Edition</span></div>
-                        <div class="card-footer">
-                            <span class="card-tag" style="background:rgba(255,143,163,0.15); color:#ff8fa3;">Loyalty
-                                Hub</span>
-                            <div class="card-links">
-                                <button class="card-share"
-                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishu-loyalty-portal/')"><i
-                                        class="far fa-copy"></i></button>
-                                <button class="btn-link"
-                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ishu-loyalty-portal')"><i
-                                        class="fab fa-github"></i> Code</button>
-                                <button class="btn-link live"
-                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishu-loyalty-portal/')"><i
-                                        class="fas fa-external-link-alt"></i> Live</button>
-                            </div>
+                <!-- 4. PORTFOLIO LIVE -->
+                <div class="card" style="--card-color: linear-gradient(to right, var(--cyan), var(--blue));"
+                    data-name="portfolio live pratik personal website">
+                    <div class="card-emoji">💼</div>
+                    <div class="card-name">Portfolio Live</div>
+                    <div class="card-desc">Pratik's professional portfolio showcase — skills, projects, and bio.</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(6,182,212,0.15); color:var(--cyan);">Professional</span>
+                        <div class="card-links">
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/portfolio-live/')">Live</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. IP STUDY HUB -->
-                <div class="card" style="--card-color: linear-gradient(to right, var(--green), #06b6d4);"
-                    data-name="ip study hub timer tasks pratik ishika" data-category="main study">
+            </div>
+        </section>
+
+
+        <!-- ======================== -->
+        <!-- SECTION 2: ACADEMIC & STUDY HUB -->
+        <!-- ======================== -->
+        <section class="section" id="academic-hub">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(16,185,129,0.15); color: var(--green);">📚</div>
+                <span class="section-title">The Study Arsenal</span>
+                <span class="section-count">42 Projects</span>
+            </div>
+
+            <!-- SUB-SECTION: GENERAL -->
+            <div class="sub-header"><i class="fas fa-book-reader"></i> General Study Tools</div>
+            <div class="project-grid">
+
+                <!-- 1. IP STUDY HUB -->
+                <div class="card featured" style="--card-color: linear-gradient(to right, var(--green), #06b6d4);"
+                    data-name="ip study hub timer tasks pratik ishika" data-category="study">
+                    <span class="featured-badge">📖 SYNCED</span>
                     <div class="card-emoji">📚</div>
-                    <div class="card-name">IP Study Hub</div>
-                    <div class="card-desc">Synced timers and shared task lists for our focused study sessions.</div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(16,185,129,0.15); color:var(--green);">Productivity</span>
-                        <div class="card-links">
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ip-study-hub/')">Live</button>
+                    <div class="card-body">
+                        <div class="card-name">IP Study Hub</div>
+                        <div class="card-desc">The master study room — synced timers and shared task lists for our
+                            focused sessions.<br><span class="update-label">v4.0 Live</span></div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(16,185,129,0.15); color:var(--green);">Synced
+                                Study</span>
+                            <div class="card-links">
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ip-study-hub/')">Live</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 6. WEDDING PORTAL -->
-                <div class="card" style="--card-color: linear-gradient(to right, #1a472a, #2c5364);"
-                    data-name="wedding gift ishu marriage certificate timeline gallery" data-category="main love">
-                    <div class="card-emoji">💍</div>
-                    <div class="card-name">Wedding Portal</div>
-                    <div class="card-desc">Our documentation of love — Marriage Certificate, Timeline, and Memory
-                        Gallery.</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(26,71,42,0.15); color:#1a472a;">Social</span>
-                        <div class="card-links">
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/wedding-gift-for-ishu/')">Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. ISHU'S MATH HUB -->
-                <div class="card" style="--card-color: linear-gradient(to right, var(--pink), var(--purple));"
-                    data-name="ishu math hub class 12 board" data-category="main math">
-                    <div class="card-emoji">📐</div>
-                    <div class="card-name">Ishu's Math Hub</div>
-                    <div class="card-desc">27 Portals for Class 12 Boards — formulas, mock tests, and cheat sheets.
-                    </div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(236,72,153,0.15); color:var(--pink);">Academic</span>
-                        <div class="card-links">
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')">Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. CHEM MASTER HUB -->
-                <div class="card" style="--card-color: linear-gradient(to right, var(--blue), var(--cyan));"
-                    data-name="chemistry 70 hub master command center" data-category="main chemistry">
-                    <div class="card-emoji">🔬</div>
-                    <div class="card-name">Chem Master Hub</div>
-                    <div class="card-desc">Command center for Board Prep with internal linking to 15+ Chem modules.
-                    </div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(59,130,246,0.15); color:var(--blue);">Academic</span>
-                        <div class="card-links">
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/chemistry-70-70-hub/')">Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. VIRTUAL SHAADI -->
-                <div class="card" style="--card-color: linear-gradient(to right, #e63946, #f4a261);"
-                    data-name="virtual shaadi 7 promise phera vachan marriage certificate" data-category="main love">
-                    <div class="card-emoji">🎪</div>
-                    <div class="card-name">Virtual Shaadi</div>
-                    <div class="card-desc">Interactive 7 Phera ceremony and digital marriage bond certificate.</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(230,57,70,0.15); color:#e63946;">Event</span>
-                        <div class="card-links">
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/pratik-ishika-shaadi/')">Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. JEE WAR ROOM -->
+                <!-- 2. JEE WAR ROOM -->
                 <div class="card" style="--card-color: linear-gradient(to right, var(--amber), var(--red));"
                     data-name="jee 70 day war room study plan tracker">
                     <div class="card-emoji">⚔️</div>
@@ -1306,35 +1261,10 @@
                     </div>
                 </div>
 
-                <!-- 11. PORTFOLIO LIVE -->
-                <div class="card" style="--card-color: linear-gradient(to right, var(--purple), var(--blue));"
-                    data-name="portfolio live pratik personal website">
-                    <div class="card-emoji">💼</div>
-                    <div class="card-name">Portfolio Live</div>
-                    <div class="card-desc">Pratik's professional portfolio showcase — skills, projects, and bio.</div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(139,92,246,0.15); color:var(--purple);">Professional</span>
-                        <div class="card-links">
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/portfolio-live/')">Live</button>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-        </section>
 
-        <!-- ======================== -->
-        <!-- SECTION 2: CHEMISTRY TOOLS -->
-        <!-- ======================== -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(6,182,212,0.15); color: var(--cyan);">⚗️</div>
-                <span class="section-title">Chemistry Arsenal</span>
-                <span class="section-count">15 Projects</span>
-            </div>
+            <!-- SUB-SECTION: CHEMISTRY -->
+            <div class="sub-header"><i class="fas fa-flask"></i> Chemistry Arsenal</div>
             <div class="project-grid">
 
                 <div class="card featured" style="--card-color: linear-gradient(to right, #ff758c, #a78bfa);"
@@ -1681,20 +1611,654 @@
                     </div>
                 </div>
 
-            </div>
+                <!-- SUB-SECTION: MATH -->
+                <div class="sub-header"><i class="fas fa-calculator"></i> Math Arsenal</div>
+                <div class="project-grid" id="math-grid-academic">
+                    <div class="card featured" style="--card-color: linear-gradient(to right, #f59e0b, #a78bfa);"
+                        data-name="ishu math hub 27 portals board 2026 80 marks">
+                        <span class="featured-badge" style="background: linear-gradient(to right, #f59e0b, #a78bfa);">🏠
+                            HUB</span>
+                        <div class="card-emoji">📐</div>
+                        <div class="card-body">
+                            <div class="card-name">Ishu's Math Hub — 27 Portals</div>
+                            <div class="card-desc">The master hub — all 27 math portals linked in one place. Complete
+                                80/80
+                                system for CBSE Class 12 Board 2026! 🎯</div>
+                            <div class="card-footer">
+                                <span class="card-tag"
+                                    style="background:rgba(245,158,11,0.15); color:var(--amber);">Main
+                                    Hub</span>
+                                <div class="card-links">
+                                    <button class="card-share"
+                                        onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
+                                            class="far fa-copy"></i></button>
+                                    <button class="btn-link"
+                                        onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ishu-math-hub')"><i
+                                            class="fab fa-github"></i> Code</button>
+                                    <button class="btn-link live"
+                                        onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
+                                            class="fas fa-external-link-alt"></i> Live</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #60a5fa, #a78bfa);"
+                        data-name="math formula master class 12 board all formulas">
+                        <div class="card-emoji">📋</div>
+                        <div class="card-name">Formula Master</div>
+                        <div class="card-desc">All Class 12 Math formulas — searchable, organized chapter-wise. Revision
+                            in
+                            minutes!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(96,165,250,0.15); color:#60a5fa;">Formulas</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-formula-master/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-formula-master')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-formula-master/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #ef4444);"
+                        data-name="math pyq hitlist previous year questions board 2015 2025">
+                        <div class="card-emoji">🎯</div>
+                        <div class="card-name">PYQ Hitlist</div>
+                        <div class="card-desc">Most repeated CBSE Math questions (2015–2025). Board exam questions with
+                            frequency analysis.</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(245,158,11,0.15); color:var(--amber);">PYQ</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-pyq-hitlist/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-pyq-hitlist')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-pyq-hitlist/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #34d399, #60a5fa);"
+                        data-name="math cheatsheet quick revision 13 chapters exam day">
+                        <span class="new-badge">NEW 🔥</span>
+                        <div class="card-emoji">⚡</div>
+                        <div class="card-name">Quick Cheatsheet</div>
+                        <div class="card-desc">13 chapters on one page — the ultimate exam-morning revision weapon. All
+                            key
+                            formulas at a glance!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(52,211,153,0.15); color:#34d399;">Exam
+                                Day</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-cheatsheet/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-cheatsheet')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-cheatsheet/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #a78bfa, #60a5fa);"
+                        data-name="math short notes quick revision theory notes">
+                        <div class="card-emoji">📝</div>
+                        <div class="card-name">Short Notes</div>
+                        <div class="card-desc">Concise theory notes for all 13 chapters. Read, revise, repeat — maximum
+                            retention in minimum time.</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(167,139,250,0.15); color:#a78bfa;">Notes</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-short-notes/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-short-notes')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-short-notes/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #34d399);"
+                        data-name="math theorems bible board favourite MVT Rolles Bayes">
+                        <div class="card-emoji">📖</div>
+                        <div class="card-name">Theorems Bible</div>
+                        <div class="card-desc">Board favourite theorems: Rolle's, MVT, Bayes', Corner Point — stated,
+                            proved, and exam-tipped!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(245,158,11,0.15); color:var(--amber);">Theorems</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-theorems-bible/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-theorems-bible')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-theorems-bible/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f472b6, #a78bfa);"
+                        data-name="math derivation master step by step proofs integration">
+                        <div class="card-emoji">📜</div>
+                        <div class="card-name">Derivation Master</div>
+                        <div class="card-desc">Step-by-step proofs for all important derivations. Get 5-mark proof
+                            questions
+                            right every time!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(244,114,182,0.15); color:#f472b6;">Proofs</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-derivation-master/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-derivation-master')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-derivation-master/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batch 2 marker -->
+                    <div id="batch-2-marker"></div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #10b981, #60a5fa);"
+                        data-name="math mcq quiz 50 questions all chapters board">
+                        <span class="new-badge">NEW 🔥</span>
+                        <div class="card-emoji">📝</div>
+                        <div class="card-name">MCQ Quiz</div>
+                        <div class="card-desc">50 MCQs covering all 13 chapters with MathJax rendering. Timed practice
+                            for
+                            board-style Section A!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(16,185,129,0.15); color:var(--green);">Quiz</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mcq-quiz/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mcq-quiz')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mcq-quiz/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #ef4444, #f59e0b);"
+                        data-name="math mock exam full 80 marks board 2026 practice paper">
+                        <span class="new-badge">NEW 🔥</span>
+                        <div class="card-emoji">🏆</div>
+                        <div class="card-name">Full Mock Exam</div>
+                        <div class="card-desc">80-mark full-length practice paper. Set 3-hour timer and simulate the
+                            real
+                            board experience!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(239,68,68,0.15); color:var(--red);">Mock
+                                Exam</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mock-exam/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mock-exam')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mock-exam/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #a78bfa, #34d399);"
+                        data-name="math flashcards formula flip active recall">
+                        <div class="card-emoji">🃏</div>
+                        <div class="card-name">Formula Flashcards</div>
+                        <div class="card-desc">Flip-based active recall — click to see formula, flip to verify. Build
+                            lasting memory for every formula!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(167,139,250,0.15); color:#a78bfa;">Flashcards</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-flashcards/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-flashcards')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-flashcards/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #fb7185, #f59e0b);"
+                        data-name="math mistakes notebook wrong vs right cbse errors">
+                        <div class="card-emoji">❌</div>
+                        <div class="card-name">Mistakes Notebook</div>
+                        <div class="card-desc">Common board mistakes — Wrong ❌ vs Right ✅ format. Avoid the errors that
+                            cost
+                            marks every year!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(251,113,133,0.15); color:#fb7185;">Mistakes</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mistakes-notebook/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mistakes-notebook')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mistakes-notebook/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #ef4444);"
+                        data-name="math last day revision 30 min exam night quick">
+                        <div class="card-emoji">🌙</div>
+                        <div class="card-name">Last Day Revision</div>
+                        <div class="card-desc">30-minute power revision for the night before exam — all 13 chapters
+                            condensed to their essence!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">Last
+                                Day</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-last-day-revision/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-last-day-revision')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-last-day-revision/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #34d399, #f59e0b);"
+                        data-name="math marks dashboard chapter strategy priority 80 marks">
+                        <div class="card-emoji">📊</div>
+                        <div class="card-name">Marks Dashboard</div>
+                        <div class="card-desc">Chapter-wise marks analysis — priority, strategy, and time allocation for
+                            maximum board score!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(52,211,153,0.15); color:#34d399;">Strategy</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-marks-dashboard/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-marks-dashboard')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-marks-dashboard/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #06b6d4, #10b981);"
+                        data-name="math graph master visual graphs functions calculus">
+                        <div class="card-emoji">📈</div>
+                        <div class="card-name">Graph Master</div>
+                        <div class="card-desc">All important graphs — functions, calculus curves, and board-asked plots
+                            visualized beautifully!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(6,182,212,0.15); color:var(--cyan);">Graphs</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-graph-master/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-graph-master')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-graph-master/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batch 3 marker -->
+                    <div id="batch-3-marker"></div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f472b6, #f59e0b);"
+                        data-name="math exam day checklist love note poku ishu board">
+                        <div class="card-emoji">💌</div>
+                        <div class="card-name">Exam Day Checklist</div>
+                        <div class="card-desc">Interactive checklist with night-before, morning, and exam-hall strategy
+                            —
+                            plus a special love note from Poku! 💕</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(244,114,182,0.15); color:#f472b6;">Exam
+                                Day</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-exam-day/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-exam-day')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-exam-day/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #fb7185);"
+                        data-name="math speed test formula quiz timed blitz hard easy">
+                        <div class="card-emoji">⚡</div>
+                        <div class="card-name">Speed Formula Test</div>
+                        <div class="card-desc">4 modes: Easy, Medium, Hard, Blitz! Timed MCQs to build exam-ready
+                            formula
+                            recall speed!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">Speed
+                                Test</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-speed-test/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-speed-test')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-speed-test/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #34d399, #60a5fa);"
+                        data-name="math progress tracker chapter confidence revision count">
+                        <div class="card-emoji">📊</div>
+                        <div class="card-name">Progress Tracker</div>
+                        <div class="card-desc">Track chapter confidence: Not Started → Seen → Practicing → Confident!
+                            Saved
+                            in browser. 📈</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(52,211,153,0.15); color:#34d399;">Tracker</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-progress-tracker/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-progress-tracker')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-progress-tracker/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #a78bfa, #f472b6);"
+                        data-name="math mind maps visual concept 13 chapters connections">
+                        <div class="card-emoji">🗺️</div>
+                        <div class="card-name">Chapter Mind Maps</div>
+                        <div class="card-desc">Visual concept maps for all 13 chapters — see how every topic connects at
+                            a
+                            glance!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(167,139,250,0.15); color:#a78bfa;">Mind
+                                Maps</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mind-maps/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mind-maps')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mind-maps/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #60a5fa, #34d399);"
+                        data-name="math solved examples bank CBSE step by step 13 chapters solutions">
+                        <div class="card-emoji">📓</div>
+                        <div class="card-name">Solved Examples Bank</div>
+                        <div class="card-desc">CBSE-style step-by-step solutions for all 13 chapters! Click to reveal
+                            answers with board tips.</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(96,165,250,0.15); color:#60a5fa;">Solutions</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-solved-examples/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-solved-examples')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-solved-examples/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f43f5e, #f59e0b);"
+                        data-name="math case study practice 8 marks board MCQ scenario">
+                        <div class="card-emoji">📋</div>
+                        <div class="card-name">Case Study Practice</div>
+                        <div class="card-desc">6 complete case studies — AOD, Probability, Integrals, LPP, Matrices, 3D.
+                            8
+                            board marks pakke!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(244,63,94,0.15); color:#f43f5e;">8
+                                Marks</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-case-study/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-case-study')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-case-study/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #f472b6);"
+                        data-name="math answer writing guide CBSE format golden rules presentation marks">
+                        <div class="card-emoji">✍️</div>
+                        <div class="card-name">Answer Writing Guide</div>
+                        <div class="card-desc">9 Golden Rules + CBSE format templates + Common mistakes + Time strategy.
+                            Sahi likho = sahi marks! 🎯</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">+8
+                                Marks</span>
+                            <div class="card-links">
+                                <button class="card-share"
+                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-answer-guide/')"><i
+                                        class="far fa-copy"></i></button>
+                                <button class="btn-link"
+                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-answer-guide')"><i
+                                        class="fab fa-github"></i> Code</button>
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-answer-guide/')"><i
+                                        class="fas fa-external-link-alt"></i> Live</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-SECTION: PHYSICS -->
+                <div class="sub-header"><i class="fas fa-atom"></i> Physics Arsenal</div>
+                <div class="project-grid">
+                    <div class="card featured" style="--card-color: linear-gradient(to right, #3b82f6, #06b6d4);"
+                        data-name="physics hub formula derivation cbse 2026">
+                        <span class="featured-badge" style="background: linear-gradient(to right, #3b82f6, #06b6d4);">⚡
+                            ATOMIC</span>
+                        <div class="card-emoji">🌌</div>
+                        <div class="card-body">
+                            <div class="card-name">Physics Hub</div>
+                            <div class="card-desc">The master physics dashboard for CBSE 2026 — formulas, derivations,
+                                and practice sets. 🚀</div>
+                            <div class="card-footer">
+                                <span class="card-tag" style="background:rgba(59,130,246,0.15); color:#60a5fa;">Main
+                                    Hub</span>
+                                <div class="card-links">
+                                    <button class="btn-link live"
+                                        onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/physics-hub/')">Live</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #3b82f6, #8b5cf6);"
+                        data-name="physics formula master all chapters revision">
+                        <div class="card-emoji">📋</div>
+                        <div class="card-name">Formula Master</div>
+                        <div class="card-desc">Complete Class 12 Physics formula book. Every single equation from
+                            Electrostats to Nuclei!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(59,130,246,0.15); color:#60a5fa;">Formulas</span>
+                            <div class="card-links">
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/physics-formula-master/')">Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #ef4444, #f59e0b);"
+                        data-name="physics pyq hitlist previous year questions">
+                        <div class="card-emoji">🎯</div>
+                        <div class="card-name">PYQ Hitlist</div>
+                        <div class="card-desc">Most repeated board questions from last 10 years. Target the hits, score
+                            100/100!</div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(239,68,68,0.15); color:var(--red);">PYQ</span>
+                            <div class="card-links">
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/physics-pyq-hitlist/')">Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="--card-color: linear-gradient(to right, #8b5cf6, #ec4899);"
+                        data-name="physics derivation master step by step proofs">
+                        <div class="card-emoji">📜</div>
+                        <div class="card-name">Derivation Master</div>
+                        <div class="card-desc">Step-by-step proofs for Gauss, Ampere, Lens Maker, and more. 5 marks in
+                            your pocket!</div>
+                        <div class="card-footer">
+                            <span class="card-tag"
+                                style="background:rgba(139,92,246,0.15); color:var(--purple);">Proofs</span>
+                            <div class="card-links">
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/physics-derivation-master/')">Live</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </section>
 
 
         <!-- ======================== -->
         <!-- SECTION 3: LOVE PROJECTS -->
         <!-- ======================== -->
-        <section class="section">
+        <section class="section" id="love-projects">
             <div class="section-header">
                 <div class="section-icon" style="background: rgba(236,72,153,0.15); color: var(--pink);">💕</div>
-                <span class="section-title">Love Projects for Ishika</span>
-                <span class="section-count">14 Projects</span>
+                <span class="section-title">Ishu's Love Projects</span>
+                <span class="section-count">20 Projects</span>
             </div>
             <div class="project-grid">
+
+                <!-- 1. ISHU LOYALTY PORTAL -->
+                <div class="card featured" style="--card-color: linear-gradient(to right, #ff8fa3, #a78bfa);"
+                    data-name="ishu loyalty portal apology report queen princess" data-category="main love loyalty">
+                    <span class="featured-badge">🤴 SUPREME</span>
+                    <div class="card-emoji">👸</div>
+                    <div class="card-body">
+                        <div class="card-name">Ishu Loyalty Portal</div>
+                        <div class="card-desc">The official loyalty report and apology engine for Queen Ishika. 1000%
+                            Loyalty Guaranteed. 💜<br><span class="update-label">Supreme Edition</span></div>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:rgba(255,143,163,0.15); color:#ff8fa3;">Loyalty
+                                Hub</span>
+                            <div class="card-links">
+                                <button class="btn-link live"
+                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishu-loyalty-portal/')">Live</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. WEDDING PORTAL -->
+                <div class="card" style="--card-color: linear-gradient(to right, #1a472a, #2c5364);"
+                    data-name="wedding gift ishu marriage certificate timeline gallery" data-category="main love">
+                    <div class="card-emoji">💍</div>
+                    <div class="card-name">Wedding Portal</div>
+                    <div class="card-desc">Our documentation of love — Marriage Certificate, Timeline, and Memory
+                        Gallery.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(26,71,42,0.15); color:#1a472a;">Social</span>
+                        <div class="card-links">
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/wedding-gift-for-ishu/')">Live</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. VIRTUAL SHAADI -->
+                <div class="card" style="--card-color: linear-gradient(to right, #e63946, #f4a261);"
+                    data-name="virtual shaadi 7 promise phera vachan marriage certificate" data-category="main love">
+                    <div class="card-emoji">🎪</div>
+                    <div class="card-name">Virtual Shaadi</div>
+                    <div class="card-desc">Interactive 7 Phera ceremony and digital marriage bond certificate.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(230,57,70,0.15); color:#e63946;">Event</span>
+                        <div class="card-links">
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/pratik-ishika-shaadi/')">Live</button>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card" style="--card-color: linear-gradient(to right, #06b6d4, #8b5cf6);"
                     data-name="apology ishu ishika sorry love">
@@ -2002,42 +2566,7 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- ======================== -->
-        <!-- SECTION 4: TOOLS -->
-        <!-- ======================== -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(245,158,11,0.15); color: var(--amber);">🛠️</div>
-                <span class="section-title">Utility Tools</span>
-                <span class="section-count">2 Projects</span>
-            </div>
-            <div class="project-grid">
-
-                <div class="card" style="--card-color: linear-gradient(to right, #ff0000, #ff758c);"
-                    data-name="yt youtube download pro premium downloader ishika">
-                    <div class="card-emoji">▶️</div>
-                    <div class="card-name">YT Download Pro</div>
-                    <div class="card-desc">Premium YouTube downloader — built especially so my girl can save her
-                        favorite videos.</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(255,0,0,0.15); color:#ff0000;">Tool</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://yt-download-pro.onrender.com/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/yt-downloader')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://yt-download-pro.onrender.com/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- 20. WEDDING TEMPLATE (MOVED) -->
                 <div class="card" style="--card-color: linear-gradient(to right, #ff758c, #ffd700);"
                     data-name="wedding template invitation card design">
                     <div class="card-emoji">💍</div>
@@ -2047,15 +2576,40 @@
                     <div class="card-footer">
                         <span class="card-tag" style="background:rgba(255,215,0,0.15); color:#ffd700;">Wedding</span>
                         <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/wedding-template/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/wedding-template')"><i
-                                    class="fab fa-github"></i> Code</button>
                             <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/wedding-template/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
+                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/wedding-template/')">Live</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 21. VALENTINE GIFT 2026 (MOVED) -->
+                <div class="card" style="--card-color: linear-gradient(to right, #ec4899, #ff758c);"
+                    data-name="ishu valentine gift 2026 love surprise rose code">
+                    <div class="card-emoji">🌹</div>
+                    <div class="card-name">Valentine Gift 2026</div>
+                    <div class="card-desc">Valentine's Day gift project — code files. 🌹✨</div>
+                    <div class="card-footer">
+                        <span class="card-tag"
+                            style="background:rgba(236,72,153,0.15); color:var(--pink);">Valentine</span>
+                        <div class="card-links">
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/Ishu-Valentine-Gift')">Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 22. YT DOWNLOAD PRO (MOVED) -->
+                <div class="card" style="--card-color: linear-gradient(to right, #ff0000, #ff758c);"
+                    data-name="yt youtube download pro premium downloader ishika">
+                    <div class="card-emoji">▶️</div>
+                    <div class="card-name">YT Download Pro</div>
+                    <div class="card-desc">Premium YouTube downloader — built especially so my girl can save her
+                        favorite videos.</div>
+                    <div class="card-footer">
+                        <span class="card-tag" style="background:rgba(255,0,0,0.15); color:#ff0000;">Tool</span>
+                        <div class="card-links">
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://yt-download-pro.onrender.com/')">Live</button>
                         </div>
                     </div>
                 </div>
@@ -2063,9 +2617,8 @@
             </div>
         </section>
 
-        <!-- ======================== -->
-        <!-- SECTION 5: CODE & AI PROJECTS -->
-        <!-- ======================== -->
+
+
         <section class="section">
             <div class="section-header">
                 <div class="section-icon" style="background: rgba(139,92,246,0.15); color: var(--purple);">🤖</div>
@@ -2087,32 +2640,8 @@
                     <div class="card-footer">
                         <span class="card-tag" style="background:rgba(139,92,246,0.15); color:var(--purple);">AI</span>
                         <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://github.com/thoratpratik2323-hue/Saturday')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/Saturday')"><i
-                                    class="fab fa-github"></i> Code</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #ec4899, #ff758c);"
-                    data-name="ishu valentine gift 2026 love surprise rose code">
-                    <div class="card-emoji">🌹</div>
-                    <div class="card-name">Valentine Gift 2026</div>
-                    <div class="card-desc">Valentine's Day gift project — no live page yet. Click to view code on
-                        GitHub. 🌹✨</div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(236,72,153,0.15); color:var(--pink);">Valentine</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://github.com/thoratpratik2323-hue/Ishu-Valentine-Gift')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/Ishu-Valentine-Gift')"><i
-                                    class="fab fa-github"></i> Code</button>
+                            <button class="btn-link live"
+                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/Saturday')">Code</button>
                         </div>
                     </div>
                 </div>
@@ -2127,503 +2656,8 @@
                         <span class="card-tag"
                             style="background:rgba(6,182,212,0.15); color:var(--cyan);">Dashboard</span>
                         <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://github.com/thoratpratik2323-hue/global-intel-dashboard')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/global-intel-dashboard')"><i
-                                    class="fab fa-github"></i> Code</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ======================== -->
-        <!-- SECTION: MATH ARSENAL -->
-        <!-- ======================== -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(245,158,11,0.15); color: var(--amber);">📐</div>
-                <span class="section-title">Math Arsenal — Ishu's 80/80 System</span>
-                <span class="section-count">26 Portals</span>
-            </div>
-            <div class="project-grid">
-
-                <div class="card featured" style="--card-color: linear-gradient(to right, #f59e0b, #a78bfa);"
-                    data-name="ishu math hub 27 portals board 2026 80 marks">
-                    <span class="featured-badge" style="background: linear-gradient(to right, #f59e0b, #a78bfa);">🏠
-                        HUB</span>
-                    <div class="card-emoji">📐</div>
-                    <div class="card-body">
-                        <div class="card-name">Ishu's Math Hub — 27 Portals</div>
-                        <div class="card-desc">The master hub — all 27 math portals linked in one place. Complete 80/80
-                            system for CBSE Class 12 Board 2026! 🎯</div>
-                        <div class="card-footer">
-                            <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">Main
-                                Hub</span>
-                            <div class="card-links">
-                                <button class="card-share"
-                                    onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
-                                        class="far fa-copy"></i></button>
-                                <button class="btn-link"
-                                    onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/ishu-math-hub')"><i
-                                        class="fab fa-github"></i> Code</button>
-                                <button class="btn-link live"
-                                    onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/ishu-math-hub/')"><i
-                                        class="fas fa-external-link-alt"></i> Live</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #60a5fa, #a78bfa);"
-                    data-name="math formula master class 12 board all formulas">
-                    <div class="card-emoji">📋</div>
-                    <div class="card-name">Formula Master</div>
-                    <div class="card-desc">All Class 12 Math formulas — searchable, organized chapter-wise. Revision in
-                        minutes!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(96,165,250,0.15); color:#60a5fa;">Formulas</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-formula-master/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-formula-master')"><i
-                                    class="fab fa-github"></i> Code</button>
                             <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-formula-master/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #ef4444);"
-                    data-name="math pyq hitlist previous year questions board 2015 2025">
-                    <div class="card-emoji">🎯</div>
-                    <div class="card-name">PYQ Hitlist</div>
-                    <div class="card-desc">Most repeated CBSE Math questions (2015–2025). Board exam questions with
-                        frequency analysis.</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">PYQ</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-pyq-hitlist/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-pyq-hitlist')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-pyq-hitlist/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #34d399, #60a5fa);"
-                    data-name="math cheatsheet quick revision 13 chapters exam day">
-                    <span class="new-badge">NEW 🔥</span>
-                    <div class="card-emoji">⚡</div>
-                    <div class="card-name">Quick Cheatsheet</div>
-                    <div class="card-desc">13 chapters on one page — the ultimate exam-morning revision weapon. All key
-                        formulas at a glance!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(52,211,153,0.15); color:#34d399;">Exam Day</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-cheatsheet/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-cheatsheet')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-cheatsheet/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #a78bfa, #60a5fa);"
-                    data-name="math short notes quick revision theory notes">
-                    <div class="card-emoji">📝</div>
-                    <div class="card-name">Short Notes</div>
-                    <div class="card-desc">Concise theory notes for all 13 chapters. Read, revise, repeat — maximum
-                        retention in minimum time.</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(167,139,250,0.15); color:#a78bfa;">Notes</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-short-notes/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-short-notes')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-short-notes/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #34d399);"
-                    data-name="math theorems bible board favourite MVT Rolles Bayes">
-                    <div class="card-emoji">📖</div>
-                    <div class="card-name">Theorems Bible</div>
-                    <div class="card-desc">Board favourite theorems: Rolle's, MVT, Bayes', Corner Point — stated,
-                        proved, and exam-tipped!</div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(245,158,11,0.15); color:var(--amber);">Theorems</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-theorems-bible/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-theorems-bible')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-theorems-bible/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f472b6, #a78bfa);"
-                    data-name="math derivation master step by step proofs integration">
-                    <div class="card-emoji">📜</div>
-                    <div class="card-name">Derivation Master</div>
-                    <div class="card-desc">Step-by-step proofs for all important derivations. Get 5-mark proof questions
-                        right every time!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(244,114,182,0.15); color:#f472b6;">Proofs</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-derivation-master/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-derivation-master')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-derivation-master/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #10b981, #60a5fa);"
-                    data-name="math mcq quiz 50 questions all chapters board">
-                    <span class="new-badge">NEW 🔥</span>
-                    <div class="card-emoji">📝</div>
-                    <div class="card-name">MCQ Quiz</div>
-                    <div class="card-desc">50 MCQs covering all 13 chapters with MathJax rendering. Timed practice for
-                        board-style Section A!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(16,185,129,0.15); color:var(--green);">Quiz</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mcq-quiz/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mcq-quiz')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mcq-quiz/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #ef4444, #f59e0b);"
-                    data-name="math mock exam full 80 marks board 2026 practice paper">
-                    <span class="new-badge">NEW 🔥</span>
-                    <div class="card-emoji">🏆</div>
-                    <div class="card-name">Full Mock Exam</div>
-                    <div class="card-desc">80-mark full-length practice paper. Set 3-hour timer and simulate the real
-                        board experience!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(239,68,68,0.15); color:var(--red);">Mock
-                            Exam</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mock-exam/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mock-exam')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mock-exam/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #a78bfa, #34d399);"
-                    data-name="math flashcards formula flip active recall">
-                    <div class="card-emoji">🃏</div>
-                    <div class="card-name">Formula Flashcards</div>
-                    <div class="card-desc">Flip-based active recall — click to see formula, flip to verify. Build
-                        lasting memory for every formula!</div>
-                    <div class="card-footer">
-                        <span class="card-tag"
-                            style="background:rgba(167,139,250,0.15); color:#a78bfa;">Flashcards</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-flashcards/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-flashcards')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-flashcards/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #fb7185, #f59e0b);"
-                    data-name="math mistakes notebook wrong vs right cbse errors">
-                    <div class="card-emoji">❌</div>
-                    <div class="card-name">Mistakes Notebook</div>
-                    <div class="card-desc">Common board mistakes — Wrong ❌ vs Right ✅ format. Avoid the errors that cost
-                        marks every year!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(251,113,133,0.15); color:#fb7185;">Mistakes</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mistakes-notebook/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mistakes-notebook')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mistakes-notebook/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #ef4444);"
-                    data-name="math last day revision 30 min exam night quick">
-                    <div class="card-emoji">🌙</div>
-                    <div class="card-name">Last Day Revision</div>
-                    <div class="card-desc">30-minute power revision for the night before exam — all 13 chapters
-                        condensed to their essence!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">Last
-                            Day</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-last-day-revision/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-last-day-revision')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-last-day-revision/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #34d399, #f59e0b);"
-                    data-name="math marks dashboard chapter strategy priority 80 marks">
-                    <div class="card-emoji">📊</div>
-                    <div class="card-name">Marks Dashboard</div>
-                    <div class="card-desc">Chapter-wise marks analysis — priority, strategy, and time allocation for
-                        maximum board score!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(52,211,153,0.15); color:#34d399;">Strategy</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-marks-dashboard/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-marks-dashboard')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-marks-dashboard/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #06b6d4, #10b981);"
-                    data-name="math graph master visual graphs functions calculus">
-                    <div class="card-emoji">📈</div>
-                    <div class="card-name">Graph Master</div>
-                    <div class="card-desc">All important graphs — functions, calculus curves, and board-asked plots
-                        visualized beautifully!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(6,182,212,0.15); color:var(--cyan);">Graphs</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-graph-master/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-graph-master')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-graph-master/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f472b6, #f59e0b);"
-                    data-name="math exam day checklist love note poku ishu board">
-                    <div class="card-emoji">💌</div>
-                    <div class="card-name">Exam Day Checklist</div>
-                    <div class="card-desc">Interactive checklist with night-before, morning, and exam-hall strategy —
-                        plus a special love note from Poku! 💕</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(244,114,182,0.15); color:#f472b6;">Exam Day</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-exam-day/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-exam-day')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-exam-day/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #fb7185);"
-                    data-name="math speed test formula quiz timed blitz hard easy">
-                    <div class="card-emoji">⚡</div>
-                    <div class="card-name">Speed Formula Test</div>
-                    <div class="card-desc">4 modes: Easy, Medium, Hard, Blitz! Timed MCQs to build exam-ready formula
-                        recall speed!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">Speed
-                            Test</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-speed-test/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-speed-test')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-speed-test/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #34d399, #60a5fa);"
-                    data-name="math progress tracker chapter confidence revision count">
-                    <div class="card-emoji">📊</div>
-                    <div class="card-name">Progress Tracker</div>
-                    <div class="card-desc">Track chapter confidence: Not Started → Seen → Practicing → Confident! Saved
-                        in browser. 📈</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(52,211,153,0.15); color:#34d399;">Tracker</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-progress-tracker/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-progress-tracker')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-progress-tracker/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #a78bfa, #f472b6);"
-                    data-name="math mind maps visual concept 13 chapters connections">
-                    <div class="card-emoji">🗺️</div>
-                    <div class="card-name">Chapter Mind Maps</div>
-                    <div class="card-desc">Visual concept maps for all 13 chapters — see how every topic connects at a
-                        glance!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(167,139,250,0.15); color:#a78bfa;">Mind
-                            Maps</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-mind-maps/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-mind-maps')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-mind-maps/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #60a5fa, #34d399);"
-                    data-name="math solved examples bank CBSE step by step 13 chapters solutions">
-                    <div class="card-emoji">📓</div>
-                    <div class="card-name">Solved Examples Bank</div>
-                    <div class="card-desc">CBSE-style step-by-step solutions for all 13 chapters! Click to reveal
-                        answers with board tips.</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(96,165,250,0.15); color:#60a5fa;">Solutions</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-solved-examples/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-solved-examples')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-solved-examples/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f43f5e, #f59e0b);"
-                    data-name="math case study practice 8 marks board MCQ scenario">
-                    <div class="card-emoji">📋</div>
-                    <div class="card-name">Case Study Practice</div>
-                    <div class="card-desc">6 complete case studies — AOD, Probability, Integrals, LPP, Matrices, 3D. 8
-                        board marks pakke!</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(244,63,94,0.15); color:#f43f5e;">8 Marks</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-case-study/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-case-study')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-case-study/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="--card-color: linear-gradient(to right, #f59e0b, #f472b6);"
-                    data-name="math answer writing guide CBSE format golden rules presentation marks">
-                    <div class="card-emoji">✍️</div>
-                    <div class="card-name">Answer Writing Guide</div>
-                    <div class="card-desc">9 Golden Rules + CBSE format templates + Common mistakes + Time strategy.
-                        Sahi likho = sahi marks! 🎯</div>
-                    <div class="card-footer">
-                        <span class="card-tag" style="background:rgba(245,158,11,0.15); color:var(--amber);">+8
-                            Marks</span>
-                        <div class="card-links">
-                            <button class="card-share"
-                                onclick="shareProject(event, 'https://thoratpratik2323-hue.github.io/math-answer-guide/')"><i
-                                    class="far fa-copy"></i></button>
-                            <button class="btn-link"
-                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/math-answer-guide')"><i
-                                    class="fab fa-github"></i> Code</button>
-                            <button class="btn-link live"
-                                onclick="openProject(event, 'https://thoratpratik2323-hue.github.io/math-answer-guide/')"><i
-                                    class="fas fa-external-link-alt"></i> Live</button>
+                                onclick="openProject(event, 'https://github.com/thoratpratik2323-hue/global-intel-dashboard')">Code</button>
                         </div>
                     </div>
                 </div>
@@ -2636,26 +2670,24 @@
             No project found for "<span id="search-term"></span>"
         </div>
 
-    </div>
+        <!-- Return to Top FAB -->
+        <button class="fab-top" id="fabBtn" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <!-- Return to Top FAB -->
-    <button class="fab-top" id="fabBtn" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <!-- FOOTER -->
+        <footer>
+            <p>Built with passion by <strong>Pratik</strong> for Ishika & for himself 🚀</p>
+            <p class="love">Forever and Always 💕</p>
+        </footer>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Built with passion by <strong>Pratik</strong> for Ishika & for himself 🚀</p>
-        <p class="love">Forever and Always 💕</p>
-    </footer>
-
-    <script>
-        // Generate particles
-        const particlesEl = document.getElementById('particles');
-        for (let i = 0; i < 60; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.cssText = `
+        <script>
+            // Generate particles
+            const particlesEl = document.getElementById('particles');
+            for (let i = 0; i < 60; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.cssText = `
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
             --d: ${2 + Math.random() * 4}s;
@@ -2663,405 +2695,405 @@
             width: ${1 + Math.random() * 3}px;
             height: ${1 + Math.random() * 3}px;
         `;
-            particlesEl.appendChild(p);
-        }
-
-        // Search filter
-        let currentCategory = 'all';
-
-        function filterCards(query) {
-            const q = query.toLowerCase().trim();
-            const cards = document.querySelectorAll('.card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const name = (card.dataset.name || '') + ' ' + (card.querySelector('.card-name')?.textContent || '');
-                const category = card.dataset.category || card.closest('.section')?.querySelector('.section-title')?.textContent.toLowerCase() || '';
-
-                let matchesQuery = false;
-                if (q.startsWith('#')) {
-                    const tag = q.substring(1);
-                    matchesQuery = category.includes(tag) || name.includes(tag) || card.innerHTML.toLowerCase().includes(tag);
-                } else {
-                    matchesQuery = !q || name.toLowerCase().includes(q);
-                }
-
-                const matchesCategory = currentCategory === 'all' || category.includes(currentCategory);
-
-                if (matchesQuery && matchesCategory) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            const noRes = document.getElementById('no-results');
-            const termEl = document.getElementById('search-term');
-            noRes.style.display = visibleCount === 0 && (q || currentCategory !== 'all') ? 'block' : 'none';
-            if (termEl) termEl.textContent = query || currentCategory;
-
-            // Re-bind hover sounds since layout changed
-            bindCardSounds();
-        }
-
-        function filterCategory(cat, btn) {
-            currentCategory = cat;
-
-            // Update active state
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            playSwoosh();
-
-            // Run filter with current search query (if any)
-            filterCards(document.getElementById('search').value);
-        }
-
-        // Share functionality
-        function shareProject(event, url) {
-            event.preventDefault(); // Stop card from opening link
-            event.stopPropagation();
-
-            navigator.clipboard.writeText(url).then(() => {
-                const toast = document.createElement('div');
-                toast.className = 'toast show';
-                toast.innerHTML = '<i class="fas fa-check-circle" style="color:var(--green)"></i> Copied link to clipboard!';
-                document.body.appendChild(toast);
-
-                // Play notification sound if using synthesis, or just tiny pop
-                try {
-                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-                    const osc = ctx.createOscillator();
-                    osc.type = "sine";
-                    osc.frequency.setValueAtTime(800, ctx.currentTime);
-                    osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
-                    osc.connect(ctx.destination);
-                    osc.start();
-                    osc.stop(ctx.currentTime + 0.1);
-                } catch (e) { }
-
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                    setTimeout(() => toast.remove(), 400);
-                }, 2000);
-            });
-        }
-
-        // Open Link Wrapper
-        function openProject(event, url) {
-            event.preventDefault();
-            event.stopPropagation();
-            window.open(url, '_blank');
-        }
-
-        // Custom Cursor Logic
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        document.body.appendChild(cursor);
-
-        const cursorDot = document.createElement('div');
-        cursorDot.className = 'custom-cursor-dot';
-        document.body.appendChild(cursorDot);
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-
-            // Create trail
-            if (Math.random() > 0.6 && sessionStorage.getItem('hubUnlocked') === 'true') {
-                const trail = document.createElement('div');
-                trail.className = 'cursor-trail';
-                trail.style.left = e.clientX + 'px';
-                trail.style.top = e.clientY + 'px';
-                document.body.appendChild(trail);
-
-                requestAnimationFrame(() => {
-                    trail.style.opacity = '0';
-                    trail.style.transform = `translate(-50%, -50%) scale(0.2)`;
-                });
-
-                setTimeout(() => trail.remove(), 500);
-            }
-        });
-
-        // Add hover effects to links
-        const interactiveElemenets = document.querySelectorAll('a, button, input');
-        interactiveElemenets.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-        });
-
-        // 4. Synthesized Sound Effects (No reliable external hotlinking)
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        let audioCtx;
-
-        function initAudio() {
-            if (!audioCtx) audioCtx = new AudioContext();
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-        }
-
-        function playUnlockSound() {
-            initAudio();
-            const osc = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-
-            osc.type = 'triangle';
-            osc.frequency.setValueAtTime(300, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
-            osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.2);
-
-            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.3, audioCtx.currentTime + 0.1);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
-
-            osc.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.6);
-        }
-
-        function playSwoosh() {
-            initAudio();
-            const osc = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
-
-            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.1, audioCtx.currentTime + 0.05);
-            gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
-
-            osc.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.25);
-        }
-
-        function bindCardSounds() {
-            document.querySelectorAll('.card:not(.hidden)').forEach(card => {
-                card.onmouseenter = playSwoosh;
-            });
-        }
-
-        // Lock screen functionality
-        function unlockHub() {
-            initAudio(); // Required after user interaction
-            const pwdInput = document.getElementById('lock-password');
-            const errorMsg = document.getElementById('lock-error');
-            const input = pwdInput.value;
-
-            // Simple but compatible "hiding" (Base64)
-            // This works even if you are opening the file locally from your PC
-            if (btoa(input) === 'aXNodTE5MDg=') {
-                playUnlockSound();
-                const overlay = document.getElementById('lock-overlay');
-                overlay.style.opacity = '0';
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    bindCardSounds();
-                }, 500);
-                errorMsg.style.opacity = '0';
-                sessionStorage.setItem('hubUnlocked', 'true');
-            } else {
-                errorMsg.style.opacity = '1';
-                pwdInput.value = '';
-                pwdInput.focus();
-            }
-        }
-
-        // Stealth & Anti-Inspection Security
-        document.addEventListener('contextmenu', e => e.preventDefault()); // Disable Right-Click
-        document.onkeydown = function (e) {
-            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-            if (e.keyCode == 123 ||
-                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) ||
-                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-                return false;
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (sessionStorage.getItem('hubUnlocked') === 'true') {
-                document.getElementById('lock-overlay').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                setTimeout(bindCardSounds, 500);
-            } else {
-                document.body.style.overflow = 'hidden';
-            }
-            updateWelcomeClock();
-            setInterval(updateWelcomeClock, 60000); // update every minute
-
-            // Check saved theme
-            if (localStorage.getItem('loveMode') === 'true') {
-                document.body.classList.add('love-mode');
-            }
-            if (localStorage.getItem('lightMode') === 'true') {
-                document.body.classList.add('light-mode');
+                particlesEl.appendChild(p);
             }
 
-            // Populate Last Visited timestamps
-            document.querySelectorAll('.card').forEach(card => {
-                const id = card.dataset.name;
-                const lastVisited = localStorage.getItem('visited_' + id);
-                if (lastVisited) {
-                    const diff = Date.now() - parseInt(lastVisited);
-                    let text = '';
-                    if (diff < 3600000) text = Math.floor(diff / 60000) + ' min pehle';
-                    else if (diff < 86400000) text = Math.floor(diff / 3600000) + ' ghante pehle';
-                    else text = Math.floor(diff / 86400000) + ' din pehle';
+            // Search filter
+            let currentCategory = 'all';
 
-                    const timeEl = document.createElement('div');
-                    timeEl.innerHTML = `<i class="far fa-clock"></i> ${text}`;
-                    timeEl.style = "font-size: 0.72rem; color: var(--muted); margin-top: 0.5rem;";
-                    card.querySelector('.card-body')?.appendChild(timeEl) || card.appendChild(timeEl);
-                }
+            function filterCards(query) {
+                const q = query.toLowerCase().trim();
+                const cards = document.querySelectorAll('.card');
+                let visibleCount = 0;
 
-                // Add click listener to save visit
-                card.addEventListener('click', function (e) {
-                    if (e.target.closest('.card-share')) return; // Ignore share clicks
-                    localStorage.setItem('visited_' + card.dataset.name, Date.now());
-                });
-            });
+                cards.forEach(card => {
+                    const name = (card.dataset.name || '') + ' ' + (card.querySelector('.card-name')?.textContent || '');
+                    const category = card.dataset.category || card.closest('.section')?.querySelector('.section-title')?.textContent.toLowerCase() || '';
 
-            // Populate Quick Launch (Top 3 most recently visited)
-            const visited = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if (key.startsWith('visited_')) {
-                    visited.push({ id: key.substring(8), time: parseInt(localStorage.getItem(key)) });
-                }
-            }
-            if (visited.length > 0) {
-                visited.sort((a, b) => b.time - a.time);
-                const quickGrid = document.getElementById('quickLaunchGrid');
-                const quickSec = document.getElementById('quick-launch');
-                let count = 0;
-                visited.forEach(v => {
-                    if (count >= 3) return;
-                    const c = document.querySelector(`.card[data-name="${v.id}"]`);
-                    // Don't clone clones
-                    if (c && c.parentElement.id !== 'quickLaunchGrid') {
-                        const clone = c.cloneNode(true);
-                        clone.id = 'clone_' + count;
-                        quickGrid.appendChild(clone);
-                        count++;
+                    let matchesQuery = false;
+                    if (q.startsWith('#')) {
+                        const tag = q.substring(1);
+                        matchesQuery = category.includes(tag) || name.includes(tag) || card.innerHTML.toLowerCase().includes(tag);
+                    } else {
+                        matchesQuery = !q || name.toLowerCase().includes(q);
+                    }
+
+                    const matchesCategory = currentCategory === 'all' || category.includes(currentCategory);
+
+                    if (matchesQuery && matchesCategory) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
                     }
                 });
-                if (count > 0) quickSec.style.display = 'block';
+
+                const noRes = document.getElementById('no-results');
+                const termEl = document.getElementById('search-term');
+                noRes.style.display = visibleCount === 0 && (q || currentCategory !== 'all') ? 'block' : 'none';
+                if (termEl) termEl.textContent = query || currentCategory;
+
+                // Re-bind hover sounds since layout changed
+                bindCardSounds();
             }
 
-            // Setup Daily Quote
-            const quotes = [
-                "Zindagi safar hai, par manzil tum ho 💕",
-                "Be the energy you want to attract! ✨",
-                "Push yourself, because no one else is going to do it for you. 🚀",
-                "You are doing better than you think. Keep going! 💪",
-                "Make today so awesome yesterday gets jealous. 🔥"
-            ];
-            const todayIndex = new Date().getDay();
-            if (document.getElementById('daily-quote')) {
-                document.getElementById('daily-quote').innerHTML = `<i class="fas fa-quote-left"></i> ${quotes[todayIndex % quotes.length]} <i class="fas fa-quote-right"></i>`;
+            function filterCategory(cat, btn) {
+                currentCategory = cat;
+
+                // Update active state
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                playSwoosh();
+
+                // Run filter with current search query (if any)
+                filterCards(document.getElementById('search').value);
             }
-        });
 
-        // 1. Welcome Clock Logic
-        function updateWelcomeClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let ampm = hours >= 12 ? 'PM' : 'AM';
+            // Share functionality
+            function shareProject(event, url) {
+                event.preventDefault(); // Stop card from opening link
+                event.stopPropagation();
 
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            minutes = minutes < 10 ? '0' + minutes : minutes;
+                navigator.clipboard.writeText(url).then(() => {
+                    const toast = document.createElement('div');
+                    toast.className = 'toast show';
+                    toast.innerHTML = '<i class="fas fa-check-circle" style="color:var(--green)"></i> Copied link to clipboard!';
+                    document.body.appendChild(toast);
 
-            const timeString = hours + ':' + minutes + ' ' + ampm;
+                    // Play notification sound if using synthesis, or just tiny pop
+                    try {
+                        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                        const osc = ctx.createOscillator();
+                        osc.type = "sine";
+                        osc.frequency.setValueAtTime(800, ctx.currentTime);
+                        osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+                        osc.connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 0.1);
+                    } catch (e) { }
 
-            let greeting = 'Good Evening';
-            if (now.getHours() < 12) greeting = 'Good Morning';
-            else if (now.getHours() < 17) greeting = 'Good Afternoon';
-
-            document.getElementById('welcome-msg').innerHTML = `<i class="far fa-clock"></i> ${timeString} — ${greeting}, Pratik!`;
-        }
-
-        // 2. Love Mode Logic
-        function toggleLoveMode() {
-            document.body.classList.toggle('love-mode');
-            playSwoosh();
-            if (document.body.classList.contains('love-mode')) {
-                localStorage.setItem('loveMode', 'true');
-                document.body.classList.remove('light-mode');
-                localStorage.setItem('lightMode', 'false');
-            } else {
-                localStorage.setItem('loveMode', 'false');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 400);
+                    }, 2000);
+                });
             }
-        }
 
-        // Light Mode Logic
-        function toggleLightMode() {
-            document.body.classList.toggle('light-mode');
-            playSwoosh();
-            if (document.body.classList.contains('light-mode')) {
-                localStorage.setItem('lightMode', 'true');
-                document.body.classList.remove('love-mode'); // Cancel love mode
-                localStorage.setItem('loveMode', 'false');
-            } else {
-                localStorage.setItem('lightMode', 'false');
+            // Open Link Wrapper
+            function openProject(event, url) {
+                event.preventDefault();
+                event.stopPropagation();
+                window.open(url, '_blank');
             }
-        }
 
-        // 3. Return to Top Logic
-        const fabBtn = document.getElementById('fabBtn');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                fabBtn.classList.add('visible');
-            } else {
-                fabBtn.classList.remove('visible');
-            }
-        };
+            // Custom Cursor Logic
+            const cursor = document.createElement('div');
+            cursor.className = 'custom-cursor';
+            document.body.appendChild(cursor);
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            const cursorDot = document.createElement('div');
+            cursorDot.className = 'custom-cursor-dot';
+            document.body.appendChild(cursorDot);
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+
+                // Create trail
+                if (Math.random() > 0.6 && sessionStorage.getItem('hubUnlocked') === 'true') {
+                    const trail = document.createElement('div');
+                    trail.className = 'cursor-trail';
+                    trail.style.left = e.clientX + 'px';
+                    trail.style.top = e.clientY + 'px';
+                    document.body.appendChild(trail);
+
+                    requestAnimationFrame(() => {
+                        trail.style.opacity = '0';
+                        trail.style.transform = `translate(-50%, -50%) scale(0.2)`;
+                    });
+
+                    setTimeout(() => trail.remove(), 500);
+                }
             });
-            playSwoosh();
-        }
 
-        // 4. Slide-Out Notes Logic
-        const notesPanel = document.getElementById('notesPanel');
-        const hubNotes = document.getElementById('hubNotes');
+            // Add hover effects to links
+            const interactiveElemenets = document.querySelectorAll('a, button, input');
+            interactiveElemenets.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
 
-        // Load saved notes (Moved into DOMContentLoaded for safety)
-        document.addEventListener('DOMContentLoaded', () => {
-            const defaultNotes = `⏳ Aaj ka Target:\n- \n\n✅ Kal Kiya:\n- \n\n🚀 Chaloo Hai:\n- `;
-            if (localStorage.getItem('savedHubNotes')) {
-                hubNotes.value = localStorage.getItem('savedHubNotes');
-            } else {
-                hubNotes.value = defaultNotes;
+            // 4. Synthesized Sound Effects (No reliable external hotlinking)
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            let audioCtx;
+
+            function initAudio() {
+                if (!audioCtx) audioCtx = new AudioContext();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
             }
-        });
 
-        function toggleNotesPanel() {
-            notesPanel.classList.toggle('open');
-            playSwoosh();
-            if (notesPanel.classList.contains('open')) {
-                setTimeout(() => hubNotes.focus(), 300);
+            function playUnlockSound() {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
+                osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.2);
+
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.3, audioCtx.currentTime + 0.1);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.6);
             }
-        }
 
-        function saveNotes() {
-            localStorage.setItem('savedHubNotes', hubNotes.value);
-        }
-    </script>
+            function playSwoosh() {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
+
+                gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.1, audioCtx.currentTime + 0.05);
+                gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
+
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.25);
+            }
+
+            function bindCardSounds() {
+                document.querySelectorAll('.card:not(.hidden)').forEach(card => {
+                    card.onmouseenter = playSwoosh;
+                });
+            }
+
+            // Lock screen functionality
+            function unlockHub() {
+                initAudio(); // Required after user interaction
+                const pwdInput = document.getElementById('lock-password');
+                const errorMsg = document.getElementById('lock-error');
+                const input = pwdInput.value;
+
+                // Simple but compatible "hiding" (Base64)
+                // This works even if you are opening the file locally from your PC
+                if (btoa(input) === 'aXNodTE5MDg=') {
+                    playUnlockSound();
+                    const overlay = document.getElementById('lock-overlay');
+                    overlay.style.opacity = '0';
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        bindCardSounds();
+                    }, 500);
+                    errorMsg.style.opacity = '0';
+                    sessionStorage.setItem('hubUnlocked', 'true');
+                } else {
+                    errorMsg.style.opacity = '1';
+                    pwdInput.value = '';
+                    pwdInput.focus();
+                }
+            }
+
+            // Stealth & Anti-Inspection Security
+            document.addEventListener('contextmenu', e => e.preventDefault()); // Disable Right-Click
+            document.onkeydown = function (e) {
+                // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+                if (e.keyCode == 123 ||
+                    (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) ||
+                    (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+                    return false;
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                if (sessionStorage.getItem('hubUnlocked') === 'true') {
+                    document.getElementById('lock-overlay').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    setTimeout(bindCardSounds, 500);
+                } else {
+                    document.body.style.overflow = 'hidden';
+                }
+                updateWelcomeClock();
+                setInterval(updateWelcomeClock, 60000); // update every minute
+
+                // Check saved theme
+                if (localStorage.getItem('loveMode') === 'true') {
+                    document.body.classList.add('love-mode');
+                }
+                if (localStorage.getItem('lightMode') === 'true') {
+                    document.body.classList.add('light-mode');
+                }
+
+                // Populate Last Visited timestamps
+                document.querySelectorAll('.card').forEach(card => {
+                    const id = card.dataset.name;
+                    const lastVisited = localStorage.getItem('visited_' + id);
+                    if (lastVisited) {
+                        const diff = Date.now() - parseInt(lastVisited);
+                        let text = '';
+                        if (diff < 3600000) text = Math.floor(diff / 60000) + ' min pehle';
+                        else if (diff < 86400000) text = Math.floor(diff / 3600000) + ' ghante pehle';
+                        else text = Math.floor(diff / 86400000) + ' din pehle';
+
+                        const timeEl = document.createElement('div');
+                        timeEl.innerHTML = `<i class="far fa-clock"></i> ${text}`;
+                        timeEl.style = "font-size: 0.72rem; color: var(--muted); margin-top: 0.5rem;";
+                        card.querySelector('.card-body')?.appendChild(timeEl) || card.appendChild(timeEl);
+                    }
+
+                    // Add click listener to save visit
+                    card.addEventListener('click', function (e) {
+                        if (e.target.closest('.card-share')) return; // Ignore share clicks
+                        localStorage.setItem('visited_' + card.dataset.name, Date.now());
+                    });
+                });
+
+                // Populate Quick Launch (Top 3 most recently visited)
+                const visited = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith('visited_')) {
+                        visited.push({ id: key.substring(8), time: parseInt(localStorage.getItem(key)) });
+                    }
+                }
+                if (visited.length > 0) {
+                    visited.sort((a, b) => b.time - a.time);
+                    const quickGrid = document.getElementById('quickLaunchGrid');
+                    const quickSec = document.getElementById('quick-launch');
+                    let count = 0;
+                    visited.forEach(v => {
+                        if (count >= 3) return;
+                        const c = document.querySelector(`.card[data-name="${v.id}"]`);
+                        // Don't clone clones
+                        if (c && c.parentElement.id !== 'quickLaunchGrid') {
+                            const clone = c.cloneNode(true);
+                            clone.id = 'clone_' + count;
+                            quickGrid.appendChild(clone);
+                            count++;
+                        }
+                    });
+                    if (count > 0) quickSec.style.display = 'block';
+                }
+
+                // Setup Daily Quote
+                const quotes = [
+                    "Zindagi safar hai, par manzil tum ho 💕",
+                    "Be the energy you want to attract! ✨",
+                    "Push yourself, because no one else is going to do it for you. 🚀",
+                    "You are doing better than you think. Keep going! 💪",
+                    "Make today so awesome yesterday gets jealous. 🔥"
+                ];
+                const todayIndex = new Date().getDay();
+                if (document.getElementById('daily-quote')) {
+                    document.getElementById('daily-quote').innerHTML = `<i class="fas fa-quote-left"></i> ${quotes[todayIndex % quotes.length]} <i class="fas fa-quote-right"></i>`;
+                }
+            });
+
+            // 1. Welcome Clock Logic
+            function updateWelcomeClock() {
+                const now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let ampm = hours >= 12 ? 'PM' : 'AM';
+
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+
+                const timeString = hours + ':' + minutes + ' ' + ampm;
+
+                let greeting = 'Good Evening';
+                if (now.getHours() < 12) greeting = 'Good Morning';
+                else if (now.getHours() < 17) greeting = 'Good Afternoon';
+
+                document.getElementById('welcome-msg').innerHTML = `<i class="far fa-clock"></i> ${timeString} — ${greeting}, Pratik!`;
+            }
+
+            // 2. Love Mode Logic
+            function toggleLoveMode() {
+                document.body.classList.toggle('love-mode');
+                playSwoosh();
+                if (document.body.classList.contains('love-mode')) {
+                    localStorage.setItem('loveMode', 'true');
+                    document.body.classList.remove('light-mode');
+                    localStorage.setItem('lightMode', 'false');
+                } else {
+                    localStorage.setItem('loveMode', 'false');
+                }
+            }
+
+            // Light Mode Logic
+            function toggleLightMode() {
+                document.body.classList.toggle('light-mode');
+                playSwoosh();
+                if (document.body.classList.contains('light-mode')) {
+                    localStorage.setItem('lightMode', 'true');
+                    document.body.classList.remove('love-mode'); // Cancel love mode
+                    localStorage.setItem('loveMode', 'false');
+                } else {
+                    localStorage.setItem('lightMode', 'false');
+                }
+            }
+
+            // 3. Return to Top Logic
+            const fabBtn = document.getElementById('fabBtn');
+            window.onscroll = function () {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    fabBtn.classList.add('visible');
+                } else {
+                    fabBtn.classList.remove('visible');
+                }
+            };
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                playSwoosh();
+            }
+
+            // 4. Slide-Out Notes Logic
+            const notesPanel = document.getElementById('notesPanel');
+            const hubNotes = document.getElementById('hubNotes');
+
+            // Load saved notes (Moved into DOMContentLoaded for safety)
+            document.addEventListener('DOMContentLoaded', () => {
+                const defaultNotes = `⏳ Aaj ka Target:\n- \n\n✅ Kal Kiya:\n- \n\n🚀 Chaloo Hai:\n- `;
+                if (localStorage.getItem('savedHubNotes')) {
+                    hubNotes.value = localStorage.getItem('savedHubNotes');
+                } else {
+                    hubNotes.value = defaultNotes;
+                }
+            });
+
+            function toggleNotesPanel() {
+                notesPanel.classList.toggle('open');
+                playSwoosh();
+                if (notesPanel.classList.contains('open')) {
+                    setTimeout(() => hubNotes.focus(), 300);
+                }
+            }
+
+            function saveNotes() {
+                localStorage.setItem('savedHubNotes', hubNotes.value);
+            }
+        </script>
 
 </body>
 
